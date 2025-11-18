@@ -1,0 +1,137 @@
+
+Server started on port 8888.
+Client connected: 127.0.0.1
+Received: REGISTER test1 1
+
+Sent: SUCCESS 201 REGISTERED test1
+
+Server shutting down
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1
+Client[1] connected: 127.0.0.1
+Client[1] Received: REGISTER test1 1
+Client[1] Sent: FAIL 409 USER_EXISTS
+Client[1] Received: REGISTER test2 1 
+Client[1] Sent: SUCCESS 201 REGISTERED test2
+Client[1] Received: LOGIN test1 1 
+Client[1] Sent: FAIL 401 INVALID_LOGIN
+Client[1] Received: LOGIN test2 1 
+Client[1] Sent: SUCCESS 200 SESSION 1763407022-41
+Client[1] Received: AUTH 1763407022-41
+Client[1] Sent: SUCCESS 200 AUTH_OK
+Accepted connection: Client[2] 127.0.0.1
+Client[2] connected: 127.0.0.1
+Client[2] Received: LOGIN test1 1 
+Client[2] Sent: FAIL 401 INVALID_LOGIN
+Server shutting down
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1
+Client[1] connected: 127.0.0.1
+Client[1] Received: LOGIN test2 1 
+Client[1] Sent: FAIL 401 INVALID_LOGIN
+Client[1] Received: LOGIN test1 1 
+Client[1] Sent: SUCCESS 200 SESSION 1763407473-41
+Client[1] disconnected.
+Server shutting down
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1:52055
+Client[1] connected: 127.0.0.1:52055
+Accepted connection: Client[2] 127.0.0.1:52056
+Client[2] connected: 127.0.0.1:52056
+Client[2] Received: LOGIN test2 1 
+Client[2] Sent: FAIL 401 INVALID_LOGIN
+Client[2] Received: AUTH 1763407022-41
+Client[2] Sent: SUCCESS 200 AUTH_OK
+Client[2] Received: LOGIN test2 1 
+Client[2] Sent: FAIL 401 INVALID_LOGIN
+Client[2] Received: LOGIN test1  1  
+Client[2] Removed old session for user test1 (1763407473-41)
+Client[2] Sent: SUCCESS 200 SESSION 1763410578-41
+Client[2] Received: LOGOUT
+Accepted connection: Client[3] 127.0.0.1:52242
+Client[3] connected: 127.0.0.1:52242
+Client[3] Received: LOGIN test2 1  
+Client[3] Sent: FAIL 401 INVALID_LOGIN
+Client[3] Received: LOGIN tes1 1   
+Client[3] Sent: FAIL 401 INVALID_LOGIN
+Client[3] Received: LOGIN tes1 1
+Client[3] Sent: FAIL 401 INVALID_LOGIN
+Client[3] Received: LOGIN test1 1
+Client[1] disconnected.
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1:52377
+Client[1] connected: 127.0.0.1:52377
+Accepted connection: Client[2] 127.0.0.1:52378
+Client[2] connected: 127.0.0.1:52378
+Client[1] Received: REGISTER test3 1
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1:52413
+Client[1] connected: 127.0.0.1:52413
+Accepted connection: Client[2] 127.0.0.1:52414
+Client[2] connected: 127.0.0.1:52414
+Client[1] Received: REGISTER test3 1
+Client[1] Sent: SUCCESS 201 REGISTERED test3
+Client[1] Received: LOGIN test3 1
+Client[1] Sent: SUCCESS 200 SESSION 1763411690-41
+Client[1] Received: AUTH 1763411690-41
+Client[1] Sent: FAIL 400 UNKNOWN_COMMAND
+Client[1] Received: LOGOUT 
+Client[1] User test3 logged out (session 1763411690-41)
+Client[1] Sent: FAIL 400 NOT_LOGGED_IN
+Client[1] Received: LOGIN test3 1
+Client[1] Sent: SUCCESS 200 SESSION 1763411782-18467
+Client[1] Received: LOGOUT 
+Client[1] User test3 logged out (session 1763411782-18467)
+Client[1] Sent: FAIL 400 NOT_LOGGED_IN
+Client[1] Received: LOGIN test1 1 
+Client[1] Removed old session for user test1 (1763410578-41)
+Client[1] Sent: SUCCESS 200 SESSION 1763412103-6334
+Client[1] Received: LOGOUT 
+Client[1] User test1 logged out (session 1763412103-6334)
+Client[1] Sent: FAIL 400 NOT_LOGGED_IN
+Client[1] Received: LOGIN test3 1
+Client[1] Sent: SUCCESS 200 SESSION 1763412130-26500
+Client[1] Received: LOGOUT 
+Client[1] User test3 logged out (session 1763412130-26500)
+Client[1] Sent: FAIL 400 NOT_LOGGED_IN
+Server shutting down
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1:52493
+Client[1] connected: 127.0.0.1:52493
+Accepted connection: Client[2] 127.0.0.1:52494
+Client[2] connected: 127.0.0.1:52494
+Client[1] Received: LOGIN test3 1
+Client[1] Sent: SUCCESS 200 SESSION 1763412423-41
+Client[1] Received: LOGOUT 
+Client[1] User test3 logged out (session 1763412423-41)
+Client[1] Sent: SUCCESS 200 LOGOUT
+Client[1] Received: LOGOUT 
+Client[1] Sent: FAIL 400 NOT_LOGGED_IN
+Client[1] Received: LOGIN test3 1
+Client[1] Sent: SUCCESS 200 SESSION 1763412461-18467
+Client[2] Received: LOGIN test3 1
+Client[2] Removed old session for user test3 (1763412461-18467)
+Client[2] Sent: SUCCESS 200 SESSION 1763412471-41
+Client[1] Received: AUTH 1763412461-18467
+Client[1] Sent: FAIL 400 UNKNOWN_COMMAND
+Client[2] Received: AUTH 1763412471-41
+Client[2] Sent: FAIL 400 UNKNOWN_COMMAND
+Client[1] disconnected.
+Client[2] disconnected.
+Server shutting down
+Server started on port 8888.
+Accepted connection: Client[1] 127.0.0.1:52562
+Client[1] connected: 127.0.0.1:52562
+Accepted connection: Client[2] 127.0.0.1:52566
+Client[2] connected: 127.0.0.1:52566
+Client[1] Received: LOGIN test3 1
+Client[1] Removed old session for user test3 (1763412471-41)
+Client[1] Sent: SUCCESS 200 SESSION 1763412821-41
+Client[2] Received: LOGIN test3 1
+Client[2] Removed old session for user test3 (1763412821-41)
+Client[2] Sent: SUCCESS 200 SESSION 1763412827-41
+Client[1] Received: AUTH 1763412821-41
+Client[1] Sent: FAIL 401 SESSION_EXPIRED
+Client[2] Received: AUTH 1763412827-41
+Client[2] Sent: SUCCESS 200 AUTH_OK
+Server shutting down
