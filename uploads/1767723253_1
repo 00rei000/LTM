@@ -1,0 +1,120 @@
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <iostream>
+#include <thread>
+#include <string>
+#include <mutex>
+
+#ifdef _MSC_VER
+#pragma comment(lib, "Ws2_32.lib")
+#endif
+
+using namespace std;
+
+string server_host = "127.0.0.1";
+int server_port = 8888;
+
+bool send_line(SOCKET s, const string &line){
+    string out = line + "\n";
+    int total = 0; int len = (int)out.size();
+    const char *ptr = out.c_str();
+    while(total < len){
+        int sent = send(s, ptr+total, len-total, 0);
+        if(sent == SOCKET_ERROR) return false;
+        total += sent;
+    }
+    return true;
+}
+
+bool recv_line(SOCKET s, string &out){
+    out.clear(); char buf[1];
+    while(true){
+        int n = recv(s, buf, 1, 0);
+        if(n <= 0) return false;
+        if(buf[0] == '\n') break;
+        if(buf[0] == '\r') continue;
+        out.push_back(buf[0]);
+    }
+    return true;
+}
+
+int main(int argc, char *argv[]){
+    WSADATA wsData;
+    if(WSAStartup(MAKEWORD(2,2), &wsData) != 0){ cerr << "WSAStartup failed\n"; return 1; }
+    SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if(sock == INVALID_SOCKET){ cerr << "socket failed\n"; return 1; }
+
+    // Allow overriding server host/port from command line.
+    // Usage examples:
+    //   client.exe               -> uses default 127.0.0.1:8888
+    //   client.exe 1.2.3.4       -> uses host 1.2.3.4 and default port 8888
+    //   client.exe 1.2.3.4 12345 -> uses host 1.2.3.4 and port 12345
+    //   client.exe 0.tcp.ngrok.io:12345 -> single arg host:port
+    if (argc >= 2) {
+        string arg1 = argv[1];
+        if (arg1 == "-h" || arg1 == "--help") {
+            cout << "Usage:\n";
+            cout << "  client.exe [host] [port]\n";
+            cout << "  client.exe host:port\n";
+            return 0;
+        }
+        size_t colon = arg1.find(':');
+        if (colon != string::npos) {
+            server_host = arg1.substr(0, colon);
+            server_port = atoi(arg1.substr(colon+1).c_str());
+        } else {
+            server_host = arg1;
+        }
+    }
+    if (argc >= 3) {
+        server_port = atoi(argv[2]);
+    }
+
+    sockaddr_in hint;
+    hint.sin_family = AF_INET;
+    hint.sin_port = htons(server_port);
+    inet_pton(AF_INET, server_host.c_str(), &hint.sin_addr);
+
+    cout << "Connecting to " << server_host << ":" << server_port << "...\n";
+    if(connect(sock, (sockaddr*)&hint, sizeof(hint)) == SOCKET_ERROR){ cerr << "connect failed\n"; return 1; }
+    cout << "Connected. Type commands (REGISTER, LOGIN, AUTH, GET_FRIENDS, ADD_FRIEND, CONFIRM_FRIEND, REJECT_FRIEND, LOGOUT) or use friendly shortcuts below.\n";
+
+    // receiver thread
+    thread recv_thread([&](){
+        string line;
+        while(recv_line(sock, line)){
+            cout << "[Server] " << line << "\n";
+        }
+        cout << "Connection closed by server\n";
+        exit(0);
+    });
+
+    // main input loop
+    string input;
+    while(true){
+        getline(cin, input);
+        if(input.empty()) continue;
+        // convenient friendly shortcuts
+        // register: /register user pass
+        if(input.rfind("/register ",0) == 0){
+            string rest = input.substr(10);
+            send_line(sock, string("REGISTER ")+rest);
+            continue;
+        }
+        if(input.rfind("/login ",0) == 0){ send_line(sock, string("LOGIN ")+input.substr(7)); continue; }
+        if(input.rfind("/auth ",0) == 0){ send_line(sock, string("AUTH ")+input.substr(6)); continue; }
+    if(input == "/list") { send_line(sock, "GET_FRIENDS"); continue; }
+    if(input.rfind("/add ",0) == 0){ send_line(sock, string("ADD_FRIEND ")+input.substr(5)); continue; }
+    if(input.rfind("/accept ",0) == 0){ send_line(sock, string("CONFIRM_FRIEND ")+input.substr(8)); continue; }
+    if(input.rfind("/reject ",0) == 0){ send_line(sock, string("REJECT_FRIEND ")+input.substr(8)); continue; }
+    if(input == "/logout") { send_line(sock, "LOGOUT"); break; }
+
+        // otherwise send input as-is (for advanced commands)
+        send_line(sock, input);
+    }
+
+    recv_thread.join();
+    closesocket(sock);
+    WSACleanup();
+    return 0;
+}

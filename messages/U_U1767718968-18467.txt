@@ -1,0 +1,10 @@
+1767718982|test11|TEXT|hi hi
+1767718986|test1|TEXT|ok thoi
+1767719003|test11|TEXT|hi hi
+1767719067|test1|TEXT|aa
+1767719084|test11|TEXT|hii
+1767719091|test11|TEXT|hi hi
+1767723589|test11|TEXT|hi hi
+1767723603|test11|TEXT|hi ban
+1767723605|test1|TEXT|tin nhan khac di
+1767723610|test11|TEXT|oke cu

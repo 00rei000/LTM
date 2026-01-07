@@ -8,6 +8,9 @@
 #   mingw32-make run-client  # run client.exe (from bin)
 #   mingw32-make clean       # remove build artifacts and txt persistence files
 
+SHELL := cmd.exe
+.SHELLFLAGS := /c
+
 CXX ?= g++
 CXXFLAGS ?= -std=c++17 -O2 -Wall
 LDFLAGS ?= -lws2_32 -pthread
@@ -26,7 +29,6 @@ build: server client
 # Server binary
 
 server: $(SRCS_SERVER)
-	@rem create bin dir if missing (works in cmd/powershell)
 	@if not exist "$(BIN_DIR)" mkdir "$(BIN_DIR)"
 	$(CXX) $(CXXFLAGS) $(SRCS_SERVER) -o "$(BIN_DIR)/server.exe" $(LDFLAGS)
 	@echo Built $(BIN_DIR)/server.exe
@@ -34,7 +36,6 @@ server: $(SRCS_SERVER)
 # Client binary
 
 client: $(SRCS_CLIENT)
-	@rem create bin dir if missing (works in cmd/powershell)
 	@if not exist "$(BIN_DIR)" mkdir "$(BIN_DIR)"
 	$(CXX) $(CXXFLAGS) $(SRCS_CLIENT) -o "$(BIN_DIR)/client.exe" $(LDFLAGS)
 	@echo Built $(BIN_DIR)/client.exe
@@ -42,12 +43,16 @@ client: $(SRCS_CLIENT)
 # Initialize legacy text files (safe to run even if using SQLite)
 init:
 	@echo Initializing legacy text persistence files if missing...
-	@if not exist users.txt (echo.>users.txt)
-	@if not exist sessions.txt (echo.>sessions.txt)
-	@if not exist pending_requests.txt (echo.>pending_requests.txt)
-	@if not exist friends.txt (echo.>friends.txt)
-	@if not exist online.txt (echo.>online.txt)
-	@if not exist server.log (echo.>server.log)
+	@if not exist users.txt type nul > users.txt
+	@if not exist sessions.txt type nul > sessions.txt
+	@if not exist pending_requests.txt type nul > pending_requests.txt
+	@if not exist friends.txt type nul > friends.txt
+	@if not exist groups.txt type nul > groups.txt
+	@if not exist group_invites.txt type nul > group_invites.txt
+	@if not exist server.log type nul > server.log
+	@if not exist messages mkdir messages
+	@if not exist uploads mkdir uploads
+	@if not exist files mkdir files
 	@echo init complete.
 
 # Run commands (runs binaries from bin/)
@@ -69,6 +74,9 @@ clean:
 	@if exist sessions.txt del sessions.txt
 	@if exist pending_requests.txt del pending_requests.txt
 	@if exist friends.txt del friends.txt
-	@if exist online.txt del online.txt
+	@if exist groups.txt del groups.txt
+	@if exist group_invites.txt del group_invites.txt
+	@if exist messages rmdir /s /q messages
+	@if exist uploads rmdir /s /q uploads
 	@if exist "$(BIN_DIR)" rmdir "$(BIN_DIR)"
 	@echo Clean complete.
