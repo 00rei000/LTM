@@ -8,7 +8,7 @@
       "defines": [
         "_DEBUG",
         "UNICODE",
-        "_UNICODE"
+        "_UNICODE" 
       ],
       "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
       "cStandard": "c17",

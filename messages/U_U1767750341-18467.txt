@@ -1,0 +1,6 @@
+1767750355|vinhle|TEXT|he lo
+1767750358|test1|TEXT|chao cau
+1767750362|vinhle|TEXT|xin chao
+1767750367|vinhle|TEXT|chao buoi sang
+1767750368|test1|TEXT|hellllooooo
+1767750822|vinhle|FILE|1767750809_1:bachkhoa.jpg

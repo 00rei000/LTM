@@ -1,0 +1,9 @@
+1767750431|test1|TEXT|chat gi di
+1767750432|vinhle|TEXT|hi group
+1767750983|vinhle|FILE|1767750983_2:bachkhoa.jpg
+1767751021|vinhle|TEXT|co phai test 2 da out roi khong
+1767751026|test1|TEXT|dung roi
+1767751036|test1|FILE|1767751035_3:file_management.pdf
+1767751081|test2|DOWNLOAD|1767751035_3:file_management.pdf
+1767751189|vinhle|FILE|1767751189_4:bachkhoa.jpg
+1767751195|test1|DOWNLOAD|1767751189_4:bachkhoa.jpg

@@ -1,0 +1,8 @@
+1764608541|test1|TEXT|aloo
+1764608543|test6|TEXT|alooooooooo cc
+
+1765902060|test6|FILE|1765902060_1:friends.txt
+1765903904|test6|FILE|1765903904_2:group_invites.txt
+1765905742|test6|TEXT|hi
+1765905753|test6|FILE|1765905753_3:groups.txt
+1765925457|test6|FILE|1765925457_1:groups.txt
