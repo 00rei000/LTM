@@ -41,10 +41,12 @@ class NetworkSignals(QObject):
     # New signals for groups and messages
     groups_updated = pyqtSignal(list)  # danh sách (tên_nhóm, số_thành_viên)
     group_invites_updated = pyqtSignal(list)  # danh sách (tên_nhóm, người_mời)
+    pending_requests_updated = pyqtSignal(list)  # danh sách tên_người_gửi
     text_message = pyqtSignal(str, str, str, str)  # loại, tên, người_gửi, nội_dung
     history_received = pyqtSignal(str, str, list)  # loại, tên, tin_nhắn
     more_history_received = pyqtSignal(list)  # chỉ tin nhắn (để tải thêm)
     members_received = pyqtSignal(str, list)  # tên_nhóm, danh_sách (tên_đăng_nhập, vai_trò, trạng_thái)
+    left_group = pyqtSignal(str)  # tên_nhóm (khi user tự rời hoặc bị kick)
     # Tín hiệu truyền file
     file_notification = pyqtSignal(str, str, str, str, str)  # loại, đích, người_gửi, id_file, tên_file
     upload_ready = pyqtSignal(str, str)  # id_file, vị_trí
@@ -167,6 +169,23 @@ class NetworkThread(QThread):
                                 name, status = f.split(':', 1)
                                 friends.append((name, status))
                     self.signals.friends_updated.emit(friends)
+                elif data.startswith("PENDING_REQUESTS "):
+                    # SUCCESS 200 PENDING_REQUESTS user1 user2 user3
+                    requests_str = data.split(' ', 1)[1] if ' ' in data else ""
+                    requests = []
+                    if requests_str:
+                        requests = [r.strip() for r in requests_str.split() if r.strip()]
+                    self.signals.pending_requests_updated.emit(requests)
+                elif data.startswith("GROUP_INVITES "):
+                    # SUCCESS 200 GROUP_INVITES group1:inviter1 group2:inviter2
+                    invites_str = data.split(' ', 1)[1] if ' ' in data else ""
+                    invites = []
+                    if invites_str:
+                        for inv in invites_str.split():
+                            if ':' in inv:
+                                group_name, inviter = inv.split(':', 1)
+                                invites.append((group_name, inviter))
+                    self.signals.group_invites_updated.emit(invites)
                 elif data.startswith("GROUPS "):
                     groups_str = data.split(' ', 1)[1] if ' ' in data else ""
                     groups = []
@@ -193,6 +212,20 @@ class NetworkThread(QThread):
                     # Server ready to receive file
                     file_id = data.split(' ')[1]
                     self.signals.upload_ready.emit(file_id, "0")
+                elif data.startswith("LEFT "):
+                    # SUCCESS 200 LEFT <group_name>
+                    group_name = data.split(' ', 1)[1]
+                    self.signals.left_group.emit(group_name)
+                    self.signals.notification.emit("Left Group", f"You have left {group_name}")
+                    # Refresh groups list
+                    self.send("GET_GROUPS\n")
+                elif data.startswith("LEFT_AND_DELETED "):
+                    # SUCCESS 200 LEFT_AND_DELETED <group_name>
+                    group_name = data.split(' ', 1)[1]
+                    self.signals.left_group.emit(group_name)
+                    self.signals.notification.emit("Group Deleted", f"You left and {group_name} was deleted")
+                    # Refresh groups list
+                    self.send("GET_GROUPS\n")
                 elif data.startswith("START_UPLOAD "):
                     # Server ready, provides offset for resume
                     offset = data.split(' ')[1]
@@ -326,6 +359,36 @@ class NetworkThread(QThread):
                 group_name = parts[1]
                 inviter = parts[2]
                 self.signals.notification.emit("Group Invite", f"{inviter} invited you to {group_name}")
+        
+        # Xử lý khi bị kick khỏi nhóm
+        elif msg.startswith("NOTIFY_EJECTED "):
+            # NOTIFY_EJECTED <group_name> <admin>
+            parts = msg.split(' ', 3)
+            if len(parts) >= 3:
+                group_name = parts[1]
+                admin = parts[2]
+                self.signals.notification.emit("Removed from Group", f"You were removed from {group_name} by {admin}")
+                # Emit signal to close chat window
+                self.signals.left_group.emit(group_name)
+                # Refresh groups list
+                self.send("GET_GROUPS\n")
+        
+        # Xử lý khi có member rời nhóm
+        elif msg.startswith("NOTIFY_MEMBER_LEFT "):
+            # NOTIFY_MEMBER_LEFT <group_name> <username>
+            parts = msg.split(' ', 3)
+            if len(parts) >= 3:
+                group_name = parts[1]
+                username = parts[2]
+                self.signals.notification.emit("Member Left", f"{username} left {group_name}")
+        
+        # Xử lý khi được chỉ định làm admin mới
+        elif msg.startswith("NOTIFY_NEW_ADMIN "):
+            # NOTIFY_NEW_ADMIN <group_name>
+            parts = msg.split(' ', 2)
+            if len(parts) >= 2:
+                group_name = parts[1]
+                self.signals.notification.emit("New Group Admin", f"You are now the admin of {group_name}")
         
         # Handle file notifications
         elif msg.startswith("NOTIFY_FILE "):
@@ -1311,6 +1374,7 @@ class MainWindow(QWidget):
         self.last_local_message = None
         self.last_local_msg_ts = 0
         self.pending_requests = []
+        self.group_invites = []  # Store group invites: list of (group_name, inviter)
         self.chat_windows = {}  # Track open chat windows: name -> ChatWindow
         self.recent_chats = []  # List of recent conversations
         
@@ -1327,12 +1391,15 @@ class MainWindow(QWidget):
         
         self.net_thread.signals.friends_updated.connect(self.update_friends_list)
         self.net_thread.signals.groups_updated.connect(self.update_groups_list)
+        self.net_thread.signals.pending_requests_updated.connect(self.update_pending_requests)
+        self.net_thread.signals.group_invites_updated.connect(self.update_group_invites)
         self.net_thread.signals.notification.connect(self.show_notification)
         self.net_thread.signals.message_received.connect(self.log_message)
         self.net_thread.signals.disconnected.connect(self.on_disconnected)
         self.net_thread.signals.text_message.connect(self.on_new_message)
         self.net_thread.signals.history_received.connect(self.on_history_received)
         self.net_thread.signals.members_received.connect(self.show_members_dialog)
+        self.net_thread.signals.left_group.connect(self.on_left_group)
         
         # Tín hiệu truyền file
         self.net_thread.signals.file_notification.connect(self.on_file_notification)
@@ -1345,6 +1412,8 @@ class MainWindow(QWidget):
         self.init_ui()
         self.refresh_friends()
         self.refresh_groups()
+        # Load pending notifications on login
+        QTimer.singleShot(500, self.load_pending_notifications)
 
     # Track last date shown in chat for inserting day separators
         self._last_date_shown = None
@@ -2037,6 +2106,46 @@ class MainWindow(QWidget):
             self.friends_list.addItem(item)
         
         self.log_message(f"Friends updated: {len(friends)} friends")
+    
+    def load_pending_notifications(self):
+        """Load pending friend requests and group invites from server"""
+        self.net_thread.send("GET_PENDING_REQUESTS")
+        self.net_thread.send("GET_GROUP_INVITES")
+        self.log_message("Loading pending notifications...")
+    
+    def update_pending_requests(self, requests):
+        """Update pending_requests list and show notifications"""
+        self.pending_requests = requests
+        
+        # Update the pending_list widget
+        self.pending_list.clear()
+        for sender in requests:
+            self.pending_list.addItem(sender)
+        
+        if requests:
+            self.log_message(f"You have {len(requests)} pending friend request(s)")
+            # Auto-show notifications popup if there are pending requests
+            if not hasattr(self, '_popup_shown'):
+                self._popup_shown = True
+                QTimer.singleShot(1000, self.show_notifications_popup)
+    
+    def update_group_invites(self, invites):
+        """Update group invites and show notifications"""
+        # Store in a class variable for access in notifications popup
+        self.group_invites = invites
+        
+        # Update the group_invites_list widget
+        self.group_invites_list.clear()
+        for group_name, inviter in invites:
+            invite_text = f"{group_name} (invited by {inviter})"
+            self.group_invites_list.addItem(invite_text)
+        
+        if invites:
+            self.log_message(f"You have {len(invites)} group invite(s)")
+            # Auto-show notifications popup if there are invites
+            if not hasattr(self, '_popup_shown'):
+                self._popup_shown = True
+                QTimer.singleShot(1000, self.show_notifications_popup)
     
     def refresh_groups(self):
         self.net_thread.send("GET_GROUPS")
@@ -3041,9 +3150,8 @@ class MainWindow(QWidget):
                                         f"Are you sure you want to leave {group_name}?",
                                         QMessageBox.Yes | QMessageBox.No)
             if reply == QMessageBox.Yes:
-                # EJECT_USER is for admin to kick, we need to implement self-leave
-                # For now, use EJECT_USER with self as target
-                cmd = f"EJECT_USER {group_name} {self.username}\n"
+                # Use LEAVE_GROUP command for self-leave
+                cmd = f"LEAVE_GROUP {group_name}\n"
                 self.net_thread.send(cmd)
                 self.log_message(f"Left group: {group_name}")
                 QTimer.singleShot(500, self.refresh_groups)
@@ -3250,6 +3358,53 @@ class MainWindow(QWidget):
     def on_disconnected(self):
         QMessageBox.warning(self, "Disconnected", "Connection lost")
         self.close()
+    
+    def on_left_group(self, group_name):
+        """Handle when user leaves or is kicked from a group"""
+        # Close chat window if open
+        if group_name in self.chat_windows:
+            chat_window = self.chat_windows[group_name]
+            chat_window.close()
+            del self.chat_windows[group_name]
+        
+        # Remove from conversations list if present
+        for i in range(self.conversations_list.count()):
+            item = self.conversations_list.item(i)
+            if item.text().startswith(f"[Group] {group_name}"):
+                self.conversations_list.takeItem(i)
+                break
+        
+        # Remove from groups list immediately
+        for i in range(self.groups_list.count()):
+            item = self.groups_list.item(i)
+            if item.data(Qt.UserRole) == group_name:
+                self.groups_list.takeItem(i)
+                self.log_message(f"Removed group '{group_name}' from groups list")
+                break
+        
+        # Clear chat display if this group is currently displayed
+        if hasattr(self, 'current_chat_type') and hasattr(self, 'current_chat_name'):
+            if self.current_chat_type == 'G' and self.current_chat_name == group_name:
+                # Clear the display
+                self.chat_display.clear()
+                
+                # Show message
+                self.chat_display.append(
+                    '<div style="text-align: center; color: #999; font-size: 14px; margin-top: 50px;">'
+                    'You have left this group'
+                    '</div>'
+                )
+                
+                # Disable input
+                self.message_input.setEnabled(False)
+                self.message_input.setPlaceholderText("You are no longer a member of this group")
+                
+                # Reset current chat
+                self.current_chat_type = None
+                self.current_chat_name = None
+        
+        # Refresh groups list from server
+        self.refresh_groups()
     
     # ========================================================================
     # File Transfer Handlers

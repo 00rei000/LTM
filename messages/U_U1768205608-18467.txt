@@ -1,0 +1,2 @@
+1768205618|khai|TEXT|kjk
+1768205619|test1|TEXT|ok

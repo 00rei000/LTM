@@ -1,0 +1,2 @@
+1768200201|phu1|TEXT|Đây là nhóm chat của Phu1
+1768200203|test1|TEXT|ok

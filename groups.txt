@@ -1,3 +1,8 @@
-hust:vinhle:10:vinhle,test1,test2
-vinh:test11:10:test11,test1
-thanh:test1:10:test1,test2,test6,test8
+hust:vinhle:10:vinhle
+vinh:test11:10:test11
+thanh:test1:10:test1
+phu1:phu1:0:
+phu:phu1:1:phu1
+new-chat:phu1:10:phu1,test1
+khailong:long:10:long,khai
+new:phu:10:phu,phu1

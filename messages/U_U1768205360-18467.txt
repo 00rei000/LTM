@@ -1,0 +1,2 @@
+1768205374|long|TEXT|Xin chao
+1768205387|khai|TEXT|chao bạn nhé

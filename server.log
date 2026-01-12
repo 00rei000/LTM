@@ -9066,3 +9066,1041 @@ GET_FRIENDS
 [2026-01-07 09:04:42] Client[5] disconnected.
 [2026-01-07 12:47:48] Client[7] disconnected.
 [2026-01-07 12:47:48] Client[2] disconnected.
+[2026-01-09 15:45:10] Server started on port 8888.
+[2026-01-09 15:46:26] Accepted connection: Client[1] 100.78.191.22:57539
+[2026-01-09 15:46:26] Client[1] connected: 100.78.191.22:57539
+[2026-01-09 15:46:26] Client[1] Received: LOGIN test1 1
+[2026-01-09 15:46:26] Client[1] Removed old session for user test1 (1767750106-41)
+[2026-01-09 15:46:26] Client[1] Sent: SUCCESS 200 SESSION 1767948386-41
+[2026-01-09 15:46:26] Client[1] Received: AUTH 1767948386-41
+[2026-01-09 15:46:26] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-09 15:46:26] Client[1] Received: GET_FRIENDS
+[2026-01-09 15:46:26] Client[1] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline
+[2026-01-09 15:46:26] Client[1] Received: GET_GROUPS
+[2026-01-09 15:46:26] Client[1] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4
+[2026-01-09 15:47:55] Accepted connection: Client[2] 100.78.191.22:57562
+[2026-01-09 15:47:55] Client[2] connected: 100.78.191.22:57562
+[2026-01-09 15:47:55] Client[2] Received: LOGIN test2 1
+[2026-01-09 15:47:55] Client[2] Removed old session for user test2 (1767751061-41)
+[2026-01-09 15:47:55] Client[2] Sent: SUCCESS 200 SESSION 1767948475-41
+[2026-01-09 15:47:55] Client[2] Received: AUTH 1767948475-41
+[2026-01-09 15:47:55] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-09 15:47:56] Client[2] Received: GET_FRIENDS
+[2026-01-09 15:47:56] Client[2] Sent: SUCCESS 200 FRIENDS test1:online test6:offline vinhle:offline
+[2026-01-09 15:47:56] Client[2] Received: GET_GROUPS
+[2026-01-09 15:47:56] Client[2] Sent: SUCCESS 200 GROUPS hust:3 thanh:4
+[2026-01-09 15:48:02] Client[2] disconnected.
+[2026-01-09 15:48:28] Accepted connection: Client[3] 100.78.191.22:57565
+[2026-01-09 15:48:28] Client[3] connected: 100.78.191.22:57565
+[2026-01-09 15:48:28] Client[3] Received: LOGIN phu 1
+[2026-01-09 15:48:28] Client[3] Sent: FAIL 401 INVALID_LOGIN
+[2026-01-09 15:48:28] Client[3] disconnected.
+[2026-01-09 15:48:31] Accepted connection: Client[4] 100.78.191.22:57566
+[2026-01-09 15:48:31] Client[4] connected: 100.78.191.22:57566
+[2026-01-09 15:48:31] Client[4] Received: REGISTER phu 1
+[2026-01-09 15:48:31] Client[4] Sent: SUCCESS 201 REGISTERED phu
+[2026-01-09 15:48:31] Client[4] Received: LOGIN phu 1
+[2026-01-09 15:48:31] Client[4] Sent: SUCCESS 200 SESSION 1767948511-41
+[2026-01-09 15:48:31] Client[4] Received: AUTH 1767948511-41
+[2026-01-09 15:48:31] Client[4] Sent: SUCCESS 200 AUTH_OK
+[2026-01-09 15:48:32] Client[4] Received: GET_FRIENDS
+[2026-01-09 15:48:32] Client[4] Sent: SUCCESS 200 FRIENDS 
+[2026-01-09 15:48:32] Client[4] Received: GET_GROUPS
+[2026-01-09 15:48:32] Client[4] Sent: SUCCESS 200 GROUPS 
+[2026-01-09 15:49:15] Client[1] Received: ADD_FRIEND phu
+[2026-01-09 15:49:15] NOTIFY to phu: NOTIFY_FRIEND_REQUEST test1
+[2026-01-09 15:49:15] Client[1] Sent: SUCCESS 200 REQUEST_SENT phu
+[2026-01-09 15:49:52] Client[4] Received: CONFIRM_FRIEND test1
+[2026-01-09 15:49:52] NOTIFY to test1: NOTIFY_FRIEND_ACCEPTED phu
+[2026-01-09 15:49:52] Client[4] Sent: SUCCESS 201 FRIEND_ADDED test1
+[2026-01-09 15:49:53] Client[4] Received: GET_FRIENDS
+[2026-01-09 15:49:53] Client[4] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-09 15:49:53] Client[1] Received: GET_FRIENDS
+[2026-01-09 15:49:53] Client[1] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:online
+[2026-01-09 15:49:53] Client[4] Received: GET_FRIENDS
+[2026-01-09 15:49:53] Client[4] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-09 15:49:54] Client[4] Received: HISTORY U test1 0 0
+[2026-01-09 15:49:54] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-09 15:49:55] Client[4] Received: HISTORY U test1 0 0
+[2026-01-09 15:49:55] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-09 15:52:20] Client[1] Received: HISTORY U phu 0 0
+[2026-01-09 15:52:20] Client[1] Sent: FAIL 404 NO_MESSAGES
+[2026-01-09 15:52:21] Client[1] Received: HISTORY U phu 0 0
+[2026-01-09 15:52:21] Client[1] Sent: FAIL 404 NO_MESSAGES
+[2026-01-09 15:52:26] Client[1] Received: TEXT U phu chao helllo
+[2026-01-09 15:52:26] NOTIFY to phu: NOTIFY_TEXT U test1 1767948746 chao helllo
+[2026-01-09 15:52:26] Client[1] Sent TEXT to phu: chao helllo
+[2026-01-09 15:52:26] Client[1] Sent: SUCCESS 201 SENT
+[2026-01-09 15:53:47] Client[1] Received: GET_MEMBERS thanh
+[2026-01-09 15:53:47] Client[1] Sent: SUCCESS 200 MEMBERS test1:admin:online test2:member:offline test6:member:offline test8:member:offline
+[2026-01-09 15:56:58] Client[1] Received: HISTORY G vinh 0 0
+[2026-01-09 15:56:58] Client[1] Sent: SUCCESS 200 8
+[2026-01-09 15:57:06] Client[1] Received: HISTORY G hust 0 0
+[2026-01-09 15:57:06] Client[1] Sent: SUCCESS 200 9
+[2026-01-09 17:27:47] Client[1] disconnected.
+[2026-01-09 17:27:47] Client[4] disconnected.
+[2026-01-12 12:43:51] Server started on port 8888.
+[2026-01-12 13:11:07] Accepted connection: Client[1] 100.78.191.22:58478
+[2026-01-12 13:11:07] Client[1] connected: 100.78.191.22:58478
+[2026-01-12 13:11:07] Client[1] Received: LOGIN phu 1
+[2026-01-12 13:11:07] Client[1] Removed old session for user phu (1767948511-41)
+[2026-01-12 13:11:07] Client[1] Sent: SUCCESS 200 SESSION 1768198267-41
+[2026-01-12 13:11:07] Client[1] Received: AUTH 1768198267-41
+[2026-01-12 13:11:07] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 13:11:08] Client[1] Received: GET_FRIENDS
+[2026-01-12 13:11:08] Client[1] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 13:11:08] Client[1] Received: GET_GROUPS
+[2026-01-12 13:11:08] Client[1] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 13:11:54] Client[1] Received: HISTORY U test1 0 0
+[2026-01-12 13:11:54] Client[1] Sent: SUCCESS 200 1
+[2026-01-12 13:12:06] Client[1] Received: HISTORY U test1 0 0
+[2026-01-12 13:12:06] Client[1] Sent: SUCCESS 200 1
+[2026-01-12 13:12:08] Client[1] Received: TEXT U test1 hello
+[2026-01-12 13:12:08] NOTIFY to test1 (offline): NOTIFY_TEXT U phu 1768198328 hello
+[2026-01-12 13:12:08] Client[1] Sent TEXT to test1: hello
+[2026-01-12 13:12:08] Client[1] Sent: SUCCESS 201 SENT
+[2026-01-12 13:12:36] Accepted connection: Client[2] 100.78.191.22:58482
+[2026-01-12 13:12:36] Client[2] connected: 100.78.191.22:58482
+[2026-01-12 13:12:36] Client[2] Received: LOGIN test1 1
+[2026-01-12 13:12:36] Client[2] Removed old session for user test1 (1767948386-41)
+[2026-01-12 13:12:36] Client[2] Sent: SUCCESS 200 SESSION 1768198356-41
+[2026-01-12 13:12:36] Client[2] Received: AUTH 1768198356-41
+[2026-01-12 13:12:36] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 13:12:36] Client[2] Received: GET_FRIENDS
+[2026-01-12 13:12:36] Client[2] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:online
+[2026-01-12 13:12:36] Client[2] Received: GET_GROUPS
+[2026-01-12 13:12:36] Client[2] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4
+[2026-01-12 13:12:38] Client[2] Received: HISTORY U phu 0 0
+[2026-01-12 13:12:38] Client[2] Sent: SUCCESS 200 2
+[2026-01-12 13:37:33] Client[1] disconnected.
+[2026-01-12 13:37:35] Client[2] disconnected.
+[2026-01-12 13:37:52] Accepted connection: Client[3] 100.121.178.13:58818
+[2026-01-12 13:37:52] Client[3] connected: 100.121.178.13:58818
+[2026-01-12 13:37:52] Client[3] Received: LOGIN phu1 1
+[2026-01-12 13:37:52] Client[3] Sent: FAIL 401 INVALID_LOGIN
+[2026-01-12 13:37:52] Client[3] disconnected.
+[2026-01-12 13:38:01] Accepted connection: Client[4] 100.121.178.13:58819
+[2026-01-12 13:38:01] Client[4] connected: 100.121.178.13:58819
+[2026-01-12 13:38:01] Client[4] Received: REGISTER phu1 1
+[2026-01-12 13:38:01] Client[4] Sent: SUCCESS 201 REGISTERED phu1
+[2026-01-12 13:38:01] Client[4] Received: LOGIN phu1 1
+[2026-01-12 13:38:01] Client[4] Sent: SUCCESS 200 SESSION 1768199881-41
+[2026-01-12 13:38:01] Client[4] Received: AUTH 1768199881-41
+[2026-01-12 13:38:01] Client[4] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 13:38:02] Client[4] Received: GET_FRIENDS
+[2026-01-12 13:38:02] Client[4] Sent: SUCCESS 200 FRIENDS 
+[2026-01-12 13:38:02] Client[4] Received: GET_GROUPS
+[2026-01-12 13:38:02] Client[4] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 13:38:06] Accepted connection: Client[5] 100.78.191.22:61438
+[2026-01-12 13:38:06] Client[5] connected: 100.78.191.22:61438
+[2026-01-12 13:38:06] Client[5] Received: LOGIN test1 1
+[2026-01-12 13:38:06] Client[5] Removed old session for user test1 (1768198356-41)
+[2026-01-12 13:38:06] Client[5] Sent: SUCCESS 200 SESSION 1768199886-41
+[2026-01-12 13:38:06] Client[5] Received: AUTH 1768199886-41
+[2026-01-12 13:38:06] Client[5] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 13:38:07] Client[5] Received: GET_FRIENDS
+[2026-01-12 13:38:07] Client[5] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline
+[2026-01-12 13:38:07] Client[5] Received: GET_GROUPS
+[2026-01-12 13:38:07] Client[5] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4
+[2026-01-12 13:38:21] Client[4] Received: ADD_FRIEND test1
+[2026-01-12 13:38:21] NOTIFY to test1: NOTIFY_FRIEND_REQUEST phu1
+[2026-01-12 13:38:21] Client[4] Sent: SUCCESS 200 REQUEST_SENT test1
+[2026-01-12 13:38:38] Client[5] Received: CONFIRM_FRIEND phu1
+[2026-01-12 13:38:38] NOTIFY to phu1: NOTIFY_FRIEND_ACCEPTED test1
+[2026-01-12 13:38:38] Client[5] Sent: SUCCESS 201 FRIEND_ADDED phu1
+[2026-01-12 13:38:38] Client[5] Received: GET_FRIENDS
+[2026-01-12 13:38:38] Client[5] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:online
+[2026-01-12 13:38:38] Client[5] Received: GET_FRIENDS
+[2026-01-12 13:38:38] Client[5] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:online
+[2026-01-12 13:38:38] Client[4] Received: GET_FRIENDS
+[2026-01-12 13:38:38] Client[4] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-12 13:38:42] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:38:42] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:38:54] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:38:54] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:38:55] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:38:55] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:39:01] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:39:01] Client[5] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:39:02] Client[5] Received: HISTORY U test13 0 0
+[2026-01-12 13:39:02] Client[5] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:39:04] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:39:04] Client[5] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:39:04] Client[4] Received: TEXT U test1 Xin chào
+[2026-01-12 13:39:04] NOTIFY to test1: NOTIFY_TEXT U phu1 1768199944 Xin chào
+[2026-01-12 13:39:04] Client[4] Sent TEXT to test1: Xin chào
+[2026-01-12 13:39:04] Client[4] Sent: SUCCESS 201 SENT
+[2026-01-12 13:39:07] Client[4] Received: TEXT U test1 Tôi là Phú
+[2026-01-12 13:39:07] NOTIFY to test1: NOTIFY_TEXT U phu1 1768199947 Tôi là Phú
+[2026-01-12 13:39:07] Client[4] Sent TEXT to test1: Tôi là Phú
+[2026-01-12 13:39:07] Client[4] Sent: SUCCESS 201 SENT
+[2026-01-12 13:39:12] Client[5] Received: TEXT U phu1 chao ban nhe
+[2026-01-12 13:39:12] NOTIFY to phu1: NOTIFY_TEXT U test1 1768199952 chao ban nhe
+[2026-01-12 13:39:12] Client[5] Sent TEXT to phu1: chao ban nhe
+[2026-01-12 13:39:12] Client[5] Sent: SUCCESS 201 SENT
+[2026-01-12 13:39:24] Client[4] Received: REQ_UPLOAD U test1 3939830968095627189 (1).jpg 1097544
+[2026-01-12 13:39:24] Client[4] Upload request: 3939830968095627189 (1).jpg -> 1768199964_1
+[2026-01-12 13:39:24] Client[4] Sent: SUCCESS 200 READY_UPLOAD 1768199964_1
+[2026-01-12 13:39:24] Client[4] Received: UPLOAD_DATA 1768199964_1
+[2026-01-12 13:39:24] Client[4] Start receiving binary chunks for 1768199964_1
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 1/17 for 1768199964_1 (65536 bytes, offset=0)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 2/17 for 1768199964_1 (65536 bytes, offset=65536)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 3/17 for 1768199964_1 (65536 bytes, offset=131072)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 4/17 for 1768199964_1 (65536 bytes, offset=196608)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 5/17 for 1768199964_1 (65536 bytes, offset=262144)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 6/17 for 1768199964_1 (65536 bytes, offset=327680)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 7/17 for 1768199964_1 (65536 bytes, offset=393216)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 8/17 for 1768199964_1 (65536 bytes, offset=458752)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 9/17 for 1768199964_1 (65536 bytes, offset=524288)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 10/17 for 1768199964_1 (65536 bytes, offset=589824)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 11/17 for 1768199964_1 (65536 bytes, offset=655360)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 12/17 for 1768199964_1 (65536 bytes, offset=720896)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 13/17 for 1768199964_1 (65536 bytes, offset=786432)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 14/17 for 1768199964_1 (65536 bytes, offset=851968)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 15/17 for 1768199964_1 (65536 bytes, offset=917504)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 16/17 for 1768199964_1 (65536 bytes, offset=983040)
+[2026-01-12 13:39:24] Client[4] Receiving UPLOAD chunk 17/17 for 1768199964_1 (48968 bytes, offset=1048576)
+[2026-01-12 13:39:24] Client[4] Upload complete: 1768199964_1
+[2026-01-12 13:39:24] NOTIFY to test1: NOTIFY_FILE U  phu1 1768199964_1 3939830968095627189 (1).jpg
+[2026-01-12 13:39:45] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:39:45] Client[4] Sent: SUCCESS 200 4
+[2026-01-12 13:40:01] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:40:01] Client[5] Sent: SUCCESS 200 4
+[2026-01-12 13:40:36] Client[4] Received: REQ_UPLOAD U test1 Screen Recording 2026-01-07 153345.mp4 360738
+[2026-01-12 13:40:36] Client[4] Upload request: Screen Recording 2026-01-07 153345.mp4 -> 1768200036_2
+[2026-01-12 13:40:36] Client[4] Sent: SUCCESS 200 READY_UPLOAD 1768200036_2
+[2026-01-12 13:40:36] Client[4] Received: UPLOAD_DATA 1768200036_2
+[2026-01-12 13:40:36] Client[4] Start receiving binary chunks for 1768200036_2
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 1/6 for 1768200036_2 (65536 bytes, offset=0)
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 2/6 for 1768200036_2 (65536 bytes, offset=65536)
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 3/6 for 1768200036_2 (65536 bytes, offset=131072)
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 4/6 for 1768200036_2 (65536 bytes, offset=196608)
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 5/6 for 1768200036_2 (65536 bytes, offset=262144)
+[2026-01-12 13:40:36] Client[4] Receiving UPLOAD chunk 6/6 for 1768200036_2 (33058 bytes, offset=327680)
+[2026-01-12 13:40:36] Client[4] Upload complete: 1768200036_2
+[2026-01-12 13:40:36] NOTIFY to test1: NOTIFY_FILE U  phu1 1768200036_2 Screen Recording 2026-01-07 153345.mp4
+[2026-01-12 13:40:41] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:40:41] Client[4] Sent: SUCCESS 200 5
+[2026-01-12 13:41:58] Client[4] Received: INIT_GROUP phu1 group 10
+[2026-01-12 13:41:58] Client[4] Created group: phu1 (max: 0)
+[2026-01-12 13:41:58] Client[4] Sent: SUCCESS 201 GROUP_CREATED phu1
+[2026-01-12 13:41:58] Client[4] Received: GET_GROUPS
+[2026-01-12 13:41:58] Client[4] Sent: SUCCESS 200 GROUPS phu1:1
+[2026-01-12 13:42:08] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:42:08] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:42:10] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:42:10] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:42:42] Client[4] Received: SEND_INVITE phu1 test1
+[2026-01-12 13:42:42] NOTIFY to test1: NOTIFY_GROUP_INVITE phu1 phu1
+
+[2026-01-12 13:42:42] Client[4] Invited test1 to group phu1
+[2026-01-12 13:42:42] Client[4] Sent: SUCCESS 200 INVITE_SENT test1
+[2026-01-12 13:42:57] Client[5] Received: CONFIRM_JOIN phu1
+[2026-01-12 13:42:57] Client[5] test1 joined group phu1
+[2026-01-12 13:42:57] NOTIFY to phu1: NOTIFY_MEMBER_JOIN phu1 test1
+
+[2026-01-12 13:42:57] Client[5] Sent: SUCCESS 201 JOINED phu1
+[2026-01-12 13:42:57] Client[5] Received: GET_GROUPS
+[2026-01-12 13:42:57] Client[5] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4 phu1:2
+[2026-01-12 13:43:01] Client[5] Received: GET_GROUPS
+[2026-01-12 13:43:01] Client[5] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4 phu1:2
+[2026-01-12 13:43:06] Client[5] Received: HISTORY G phu1 0 0
+[2026-01-12 13:43:06] Client[5] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:43:10] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:43:10] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:43:12] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:43:12] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:43:21] Client[4] Received: TEXT G phu1 Đây là nhóm chat của Phu1
+[2026-01-12 13:43:21] NOTIFY to test1: NOTIFY_TEXT G phu1 phu1 1768200201 Đây là nhóm chat của Phu1
+[2026-01-12 13:43:21] Client[4] Sent TEXT to group phu1: Đây là nhóm chat của Phu1
+[2026-01-12 13:43:21] Client[4] Sent: SUCCESS 201 SENT
+[2026-01-12 13:43:23] Client[5] Received: TEXT G phu1 ok
+[2026-01-12 13:43:23] NOTIFY to phu1: NOTIFY_TEXT G phu1 test1 1768200203 ok
+[2026-01-12 13:43:23] Client[5] Sent TEXT to group phu1: ok
+[2026-01-12 13:43:23] Client[5] Sent: SUCCESS 201 SENT
+[2026-01-12 13:43:34] Client[4] Received: GET_MEMBERS phu1
+[2026-01-12 13:43:34] Client[4] Sent: SUCCESS 200 MEMBERS phu1:admin:online test1:member:online
+[2026-01-12 13:43:54] Client[4] Received: EJECT_USER phu1 phu1
+[2026-01-12 13:43:54] Client[4] phu1 ejected phu1 from group phu1
+[2026-01-12 13:43:54] NOTIFY to phu1: NOTIFY_EJECTED phu1 phu1
+
+[2026-01-12 13:43:54] NOTIFY to test1: NOTIFY_MEMBER_LEFT phu1 phu1
+
+[2026-01-12 13:43:54] Client[4] Sent: SUCCESS 200 EJECTED phu1
+[2026-01-12 13:43:55] Client[4] Received: GET_GROUPS
+[2026-01-12 13:43:55] Client[4] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 13:43:57] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:43:57] Client[4] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 13:43:58] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:43:58] Client[4] Sent: SUCCESS 200 5
+[2026-01-12 13:43:59] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:43:59] Client[4] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 13:44:04] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:04] Client[4] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 13:44:07] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:07] Client[4] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 13:44:09] Client[5] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:09] Client[5] Sent: SUCCESS 200 2
+[2026-01-12 13:44:10] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:44:10] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 13:44:10] Client[5] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:10] Client[5] Sent: SUCCESS 200 2
+[2026-01-12 13:44:10] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:44:10] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 13:44:11] Client[5] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:11] Client[5] Sent: SUCCESS 200 2
+[2026-01-12 13:44:11] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:44:11] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 13:44:11] Client[5] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:11] Client[5] Sent: SUCCESS 200 2
+[2026-01-12 13:44:12] Client[5] Received: HISTORY U phu1 0 0
+[2026-01-12 13:44:12] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 13:44:14] Client[5] Received: GET_MEMBERS phu1
+[2026-01-12 13:44:14] Client[5] Sent: SUCCESS 200 MEMBERS test1:member:online
+[2026-01-12 13:44:29] Client[4] Received: INIT_GROUP phu 1 group 10
+[2026-01-12 13:44:29] Client[4] Created group: phu (max: 1)
+[2026-01-12 13:44:29] Client[4] Sent: SUCCESS 201 GROUP_CREATED phu
+[2026-01-12 13:44:30] Client[4] Received: GET_GROUPS
+[2026-01-12 13:44:30] Client[4] Sent: SUCCESS 200 GROUPS phu:1
+[2026-01-12 13:44:34] Client[4] Received: HISTORY U test1 0 0
+[2026-01-12 13:44:34] Client[4] Sent: SUCCESS 200 5
+[2026-01-12 13:44:34] Client[4] Received: HISTORY G phu1 0 0
+[2026-01-12 13:44:34] Client[4] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 13:44:48] Client[5] disconnected.
+[2026-01-12 13:45:56] Client[4] Received: INIT_GROUP new-chat 10
+[2026-01-12 13:45:56] Client[4] Created group: new-chat (max: 10)
+[2026-01-12 13:45:56] Client[4] Sent: SUCCESS 201 GROUP_CREATED new-chat
+[2026-01-12 13:45:57] Client[4] Received: GET_GROUPS
+[2026-01-12 13:45:57] Client[4] Sent: SUCCESS 200 GROUPS phu:1 new-chat:1
+[2026-01-12 13:46:02] Client[4] Received: HISTORY G new-chat 0 0
+[2026-01-12 13:46:02] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:46:06] Client[4] Received: HISTORY G new-chat 0 0
+[2026-01-12 13:46:06] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 13:46:10] Client[4] Received: SEND_INVITE new-chat test1
+[2026-01-12 13:46:10] NOTIFY to test1 (offline): NOTIFY_GROUP_INVITE new-chat phu1
+
+[2026-01-12 13:46:10] Client[4] Invited test1 to group new-chat
+[2026-01-12 13:46:10] Client[4] Sent: SUCCESS 200 INVITE_SENT test1
+[2026-01-12 13:46:13] Client[4] Received: TEXT G new-chat hi
+[2026-01-12 13:46:13] Client[4] Sent TEXT to group new-chat: hi
+[2026-01-12 13:46:13] Client[4] Sent: SUCCESS 201 SENT
+[2026-01-12 13:46:55] Accepted connection: Client[6] 100.78.191.22:62386
+[2026-01-12 13:46:55] Client[6] connected: 100.78.191.22:62386
+[2026-01-12 13:46:55] Client[6] Received: LOGIN test1 1
+[2026-01-12 13:46:55] Client[6] Removed old session for user test1 (1768199886-41)
+[2026-01-12 13:46:55] Client[6] Sent: SUCCESS 200 SESSION 1768200415-41
+[2026-01-12 13:46:55] Client[6] Received: AUTH 1768200415-41
+[2026-01-12 13:46:55] Client[6] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 13:46:56] Client[6] Received: GET_FRIENDS
+[2026-01-12 13:46:56] Client[6] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:online
+[2026-01-12 13:46:56] Client[6] Received: GET_GROUPS
+[2026-01-12 13:46:56] Client[6] Sent: SUCCESS 200 GROUPS hust:3 vinh:2 thanh:4 phu1:1
+[2026-01-12 13:50:10] Client[6] disconnected.
+Server shutting down
+[2026-01-12 14:00:11] Server started on port 8888.
+[2026-01-12 14:00:20] Accepted connection: Client[1] 100.78.191.22:62503
+[2026-01-12 14:00:20] Client[1] connected: 100.78.191.22:62503
+[2026-01-12 14:00:20] Client[1] Received: LOGIN test1 1
+[2026-01-12 14:00:20] Client[1] Removed old session for user test1 (1768200415-41)
+[2026-01-12 14:00:20] Client[1] Sent: SUCCESS 200 SESSION 1768201220-41
+[2026-01-12 14:00:20] Client[1] Received: AUTH 1768201220-41
+[2026-01-12 14:00:20] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:00:21] Client[1] Received: GET_FRIENDS
+[2026-01-12 14:00:21] Client[1] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline
+[2026-01-12 14:00:21] Client[1] Received: GET_GROUPS
+[2026-01-12 14:00:21] Client[1] Sent: SUCCESS 200 GROUPS phu1:1 thanh:4 vinh:2 hust:3
+[2026-01-12 14:00:59] Client[1] Received: GET_MEMBERS vinh
+[2026-01-12 14:00:59] Client[1] Sent: SUCCESS 200 MEMBERS test11:admin:offline test1:member:online
+[2026-01-12 14:01:07] Client[1] Received: LEAVE_GROUP vinh
+[2026-01-12 14:01:07] Client[1] test1 left group vinh
+[2026-01-12 14:01:07] NOTIFY to test11 (offline): NOTIFY_MEMBER_LEFT vinh test1
+
+[2026-01-12 14:01:07] Client[1] Sent: SUCCESS 200 LEFT vinh
+[2026-01-12 14:01:07] Client[1] Received: GET_GROUPS
+[2026-01-12 14:01:07] Client[1] Sent: SUCCESS 200 GROUPS phu1:1 thanh:4 hust:3
+[2026-01-12 14:01:25] Client[1] Received: HISTORY G thanh 0 0
+[2026-01-12 14:01:25] Client[1] Sent: SUCCESS 200 43
+[2026-01-12 14:01:27] Client[1] Received: GET_MEMBERS thanh
+[2026-01-12 14:01:27] Client[1] Sent: SUCCESS 200 MEMBERS test1:admin:online test2:member:offline test6:member:offline test8:member:offline
+[2026-01-12 14:01:32] Client[1] Received: HISTORY G hust 0 0
+[2026-01-12 14:01:32] Client[1] Sent: SUCCESS 200 9
+[2026-01-12 14:01:33] Client[1] Received: GET_MEMBERS hust
+[2026-01-12 14:01:33] Client[1] Sent: SUCCESS 200 MEMBERS vinhle:admin:offline test1:member:online test2:member:offline
+[2026-01-12 14:01:36] Client[1] Received: LEAVE_GROUP hust
+[2026-01-12 14:01:36] Client[1] test1 left group hust
+[2026-01-12 14:01:36] NOTIFY to vinhle (offline): NOTIFY_MEMBER_LEFT hust test1
+
+[2026-01-12 14:01:36] NOTIFY to test2 (offline): NOTIFY_MEMBER_LEFT hust test1
+
+[2026-01-12 14:01:36] Client[1] Sent: SUCCESS 200 LEFT hust
+[2026-01-12 14:01:36] Client[1] Received: GET_GROUPS
+[2026-01-12 14:01:36] Client[1] Sent: SUCCESS 200 GROUPS phu1:1 thanh:4
+[2026-01-12 14:01:37] Client[1] Received: HISTORY G thanh 0 0
+[2026-01-12 14:01:37] Client[1] Sent: SUCCESS 200 43
+[2026-01-12 14:01:38] Client[1] Received: HISTORY G hust 0 0
+[2026-01-12 14:01:38] Client[1] Sent: FAIL 403 ACCESS_DENIED
+[2026-01-12 14:01:40] Client[1] Received: HISTORY G thanh 0 0
+[2026-01-12 14:01:40] Client[1] Sent: SUCCESS 200 43
+[2026-01-12 14:06:50] Client[1] disconnected.
+[2026-01-12 14:07:01] Accepted connection: Client[2] 100.78.191.22:62610
+[2026-01-12 14:07:01] Client[2] connected: 100.78.191.22:62610
+[2026-01-12 14:07:01] Client[2] Received: LOGIN test2 1
+[2026-01-12 14:07:01] Client[2] Removed old session for user test2 (1767948475-41)
+[2026-01-12 14:07:01] Client[2] Sent: SUCCESS 200 SESSION 1768201621-41
+[2026-01-12 14:07:01] Client[2] Received: AUTH 1768201621-41
+[2026-01-12 14:07:01] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:07:02] Client[2] Received: GET_FRIENDS
+[2026-01-12 14:07:02] Client[2] Sent: SUCCESS 200 FRIENDS test1:offline test6:offline vinhle:offline
+[2026-01-12 14:07:02] Client[2] Received: GET_GROUPS
+[2026-01-12 14:07:02] Client[2] Sent: SUCCESS 200 GROUPS thanh:4 hust:2
+[2026-01-12 14:07:07] Client[2] Received: HISTORY G hust 0 0
+[2026-01-12 14:07:07] Client[2] Sent: SUCCESS 200 9
+[2026-01-12 14:07:15] Client[2] Received: GET_MEMBERS hust
+[2026-01-12 14:07:15] Client[2] Sent: SUCCESS 200 MEMBERS vinhle:admin:offline test2:member:online
+[2026-01-12 14:07:19] Client[2] Received: LEAVE_GROUP hust
+[2026-01-12 14:07:19] Client[2] test2 left group hust
+[2026-01-12 14:07:19] NOTIFY to vinhle (offline): NOTIFY_MEMBER_LEFT hust test2
+
+[2026-01-12 14:07:19] Client[2] Sent: SUCCESS 200 LEFT hust
+[2026-01-12 14:07:19] Client[2] Received: GET_GROUPS
+[2026-01-12 14:07:19] Client[2] Sent: SUCCESS 200 GROUPS thanh:4
+[2026-01-12 14:07:20] Client[2] disconnected.
+[2026-01-12 14:08:36] Accepted connection: Client[3] 100.78.191.22:62646
+[2026-01-12 14:08:36] Client[3] connected: 100.78.191.22:62646
+[2026-01-12 14:08:36] Client[3] Received: LOGIN test2 1
+[2026-01-12 14:08:36] Client[3] Removed old session for user test2 (1768201621-41)
+[2026-01-12 14:08:36] Client[3] Sent: SUCCESS 200 SESSION 1768201716-41
+[2026-01-12 14:08:36] Client[3] Received: AUTH 1768201716-41
+[2026-01-12 14:08:36] Client[3] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:08:37] Client[3] Received: GET_FRIENDS
+[2026-01-12 14:08:37] Client[3] Sent: SUCCESS 200 FRIENDS test1:offline test6:offline vinhle:offline
+[2026-01-12 14:08:37] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:37] Client[3] Sent: SUCCESS 200 GROUPS thanh:4
+[2026-01-12 14:08:41] Client[3] Received: GET_MEMBERS thanh
+[2026-01-12 14:08:41] Client[3] Sent: SUCCESS 200 MEMBERS test1:admin:offline test2:member:online test6:member:offline test8:member:offline
+[2026-01-12 14:08:44] Client[3] Received: LEAVE_GROUP thanh
+[2026-01-12 14:08:44] Client[3] test2 left group thanh
+[2026-01-12 14:08:44] NOTIFY to test1 (offline): NOTIFY_MEMBER_LEFT thanh test2
+
+[2026-01-12 14:08:44] NOTIFY to test6 (offline): NOTIFY_MEMBER_LEFT thanh test2
+
+[2026-01-12 14:08:44] NOTIFY to test8 (offline): NOTIFY_MEMBER_LEFT thanh test2
+
+[2026-01-12 14:08:44] Client[3] Sent: SUCCESS 200 LEFT thanh
+[2026-01-12 14:08:44] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:44] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:44] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:44] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:44] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:44] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:48] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:48] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:51] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:51] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:53] Client[3] Received: GET_GROUPS
+[2026-01-12 14:08:53] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:08:54] Client[3] Received: GET_MEMBERS thanh
+[2026-01-12 14:08:54] Client[3] Sent: FAIL 403 NOT_A_MEMBER
+[2026-01-12 14:09:17] Client[3] Received: GET_GROUPS
+[2026-01-12 14:09:17] Client[3] Sent: SUCCESS 200 GROUPS 
+Server shutting down
+[2026-01-12 14:13:28] Server started on port 8888.
+[2026-01-12 14:14:10] Accepted connection: Client[1] 100.78.191.22:62724
+[2026-01-12 14:14:10] Client[1] connected: 100.78.191.22:62724
+[2026-01-12 14:14:10] Client[1] Received: LOGIN test1 1
+[2026-01-12 14:14:10] Client[1] Removed old session for user test1 (1768201220-41)
+[2026-01-12 14:14:10] Client[1] Sent: SUCCESS 200 SESSION 1768202050-41
+[2026-01-12 14:14:10] Client[1] Received: AUTH 1768202050-41
+[2026-01-12 14:14:10] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:14:11] Client[1] Received: GET_FRIENDS
+[2026-01-12 14:14:11] Client[1] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline
+[2026-01-12 14:14:11] Client[1] Received: GET_GROUPS
+[2026-01-12 14:14:11] Client[1] Sent: SUCCESS 200 GROUPS thanh:3 phu1:1
+[2026-01-12 14:14:17] Client[1] Received: GET_MEMBERS thanh
+[2026-01-12 14:14:17] Client[1] Sent: SUCCESS 200 MEMBERS test1:admin:online test6:member:offline test8:member:offline
+[2026-01-12 14:14:21] Client[1] Received: GET_MEMBERS phu1
+[2026-01-12 14:14:21] Client[1] Sent: SUCCESS 200 MEMBERS test1:member:online
+[2026-01-12 14:14:26] Client[1] Received: HISTORY G phu1 0 0
+[2026-01-12 14:14:26] Client[1] Sent: SUCCESS 200 2
+[2026-01-12 14:14:28] Client[1] Received: GET_MEMBERS phu1
+[2026-01-12 14:14:28] Client[1] Sent: SUCCESS 200 MEMBERS test1:member:online
+[2026-01-12 14:14:29] Client[1] Received: LEAVE_GROUP phu1
+[2026-01-12 14:14:29] Client[1] test1 left group phu1
+[2026-01-12 14:14:29] Client[1] Sent: SUCCESS 200 LEFT phu1
+[2026-01-12 14:14:29] Client[1] Received: GET_GROUPS
+[2026-01-12 14:14:29] Client[1] Sent: SUCCESS 200 GROUPS thanh:3
+[2026-01-12 14:14:31] Client[1] disconnected.
+[2026-01-12 14:16:01] Accepted connection: Client[2] 100.78.191.22:62768
+[2026-01-12 14:16:01] Client[2] connected: 100.78.191.22:62768
+[2026-01-12 14:16:01] Client[2] Received: LOGIN test6 1
+[2026-01-12 14:16:01] Client[2] Removed old session for user test6 (1765925233-41)
+[2026-01-12 14:16:01] Client[2] Sent: SUCCESS 200 SESSION 1768202161-41
+[2026-01-12 14:16:01] Client[2] Received: AUTH 1768202161-41
+[2026-01-12 14:16:01] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:16:02] Client[2] Received: GET_FRIENDS
+[2026-01-12 14:16:02] Client[2] Sent: SUCCESS 200 FRIENDS test2:offline test1:offline
+[2026-01-12 14:16:02] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:02] Client[2] Sent: SUCCESS 200 GROUPS thanh:3
+[2026-01-12 14:16:06] Client[2] Received: GET_MEMBERS thanh
+[2026-01-12 14:16:06] Client[2] Sent: SUCCESS 200 MEMBERS test1:admin:offline test6:member:online test8:member:offline
+[2026-01-12 14:16:11] Client[2] Received: HISTORY G thanh 0 0
+[2026-01-12 14:16:11] Client[2] Sent: SUCCESS 200 43
+[2026-01-12 14:16:13] Client[2] Received: GET_MEMBERS thanh
+[2026-01-12 14:16:13] Client[2] Sent: SUCCESS 200 MEMBERS test1:admin:offline test6:member:online test8:member:offline
+[2026-01-12 14:16:17] Client[2] Received: LEAVE_GROUP thanh
+[2026-01-12 14:16:17] Client[2] test6 left group thanh
+[2026-01-12 14:16:17] NOTIFY to test1 (offline): NOTIFY_MEMBER_LEFT thanh test6
+
+[2026-01-12 14:16:17] NOTIFY to test8 (offline): NOTIFY_MEMBER_LEFT thanh test6
+
+[2026-01-12 14:16:17] Client[2] Sent: SUCCESS 200 LEFT thanh
+[2026-01-12 14:16:17] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:17] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:17] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:17] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:17] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:17] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:19] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:19] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:23] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:23] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:28] Client[2] Received: HISTORY U test2 0 0
+[2026-01-12 14:16:28] Client[2] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 14:16:30] Client[2] Received: GET_GROUPS
+[2026-01-12 14:16:30] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:16:31] Client[2] Received: GET_MEMBERS thanh
+[2026-01-12 14:16:31] Client[2] Sent: FAIL 403 NOT_A_MEMBER
+[2026-01-12 14:19:06] Client[2] Received: GET_MEMBERS thanh
+[2026-01-12 14:19:06] Client[2] Sent: FAIL 403 NOT_A_MEMBER
+[2026-01-12 14:19:08] Client[2] Received: GET_GROUPS
+[2026-01-12 14:19:08] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:19:09] Client[2] disconnected.
+[2026-01-12 14:19:18] Accepted connection: Client[3] 100.78.191.22:62818
+[2026-01-12 14:19:18] Client[3] connected: 100.78.191.22:62818
+[2026-01-12 14:19:18] Client[3] Received: LOGIN test8 1
+[2026-01-12 14:19:18] Client[3] Sent: SUCCESS 200 SESSION 1768202358-41
+[2026-01-12 14:19:18] Client[3] Received: AUTH 1768202358-41
+[2026-01-12 14:19:18] Client[3] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:19:19] Client[3] Received: GET_FRIENDS
+[2026-01-12 14:19:19] Client[3] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 14:19:19] Client[3] Received: GET_GROUPS
+[2026-01-12 14:19:19] Client[3] Sent: SUCCESS 200 GROUPS thanh:2
+[2026-01-12 14:19:23] Client[3] Received: GET_MEMBERS thanh
+[2026-01-12 14:19:23] Client[3] Sent: SUCCESS 200 MEMBERS test1:admin:offline test8:member:online
+[2026-01-12 14:19:29] Client[3] Received: GET_MEMBERS thanh
+[2026-01-12 14:19:29] Client[3] Sent: SUCCESS 200 MEMBERS test1:admin:offline test8:member:online
+[2026-01-12 14:19:33] Client[3] Received: LEAVE_GROUP thanh
+[2026-01-12 14:19:33] Client[3] test8 left group thanh
+[2026-01-12 14:19:33] NOTIFY to test1 (offline): NOTIFY_MEMBER_LEFT thanh test8
+
+[2026-01-12 14:19:33] Client[3] Sent: SUCCESS 200 LEFT thanh
+[2026-01-12 14:19:33] Client[3] Received: GET_GROUPS
+[2026-01-12 14:19:33] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:19:33] Client[3] Received: GET_GROUPS
+[2026-01-12 14:19:33] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:19:33] Client[3] Received: GET_GROUPS
+[2026-01-12 14:19:33] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:19:35] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 14:19:35] Client[3] Sent: SUCCESS 200 8
+[2026-01-12 14:19:36] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 14:19:36] Client[3] Sent: SUCCESS 200 8
+[2026-01-12 14:26:49] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 14:26:49] Client[3] Sent: SUCCESS 200 8
+Server shutting down
+[2026-01-12 14:28:04] Server started on port 8888.
+[2026-01-12 14:28:21] Accepted connection: Client[1] 100.78.191.22:63013
+[2026-01-12 14:28:21] Client[1] connected: 100.78.191.22:63013
+[2026-01-12 14:28:21] Client[1] Received: LOGIN test1 1
+[2026-01-12 14:28:21] Client[1] Removed old session for user test1 (1768202050-41)
+[2026-01-12 14:28:21] Client[1] Sent: SUCCESS 200 SESSION 1768202901-41
+[2026-01-12 14:28:21] Client[1] Received: AUTH 1768202901-41
+[2026-01-12 14:28:21] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:28:21] Client[1] Received: GET_FRIENDS
+[2026-01-12 14:28:21] Client[1] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline
+[2026-01-12 14:28:21] Client[1] Received: GET_GROUPS
+[2026-01-12 14:28:21] Client[1] Sent: SUCCESS 200 GROUPS thanh:1
+[2026-01-12 14:28:22] Client[1] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:28:22] Client[1] Sent 0 pending requests to test1
+[2026-01-12 14:28:22] Client[1] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 14:28:22] Client[1] Received: GET_GROUP_INVITES
+[2026-01-12 14:28:22] Client[1] Sent 1 group invites to test1
+[2026-01-12 14:28:22] Client[1] Sent: SUCCESS 200 GROUP_INVITES new-chat:phu1
+[2026-01-12 14:28:34] Client[1] Received: SEND_INVITE thanh test2
+[2026-01-12 14:28:34] NOTIFY to test2 (offline): NOTIFY_GROUP_INVITE thanh test1
+
+[2026-01-12 14:28:34] Client[1] Invited test2 to group thanh
+[2026-01-12 14:28:34] Client[1] Sent: SUCCESS 200 INVITE_SENT test2
+[2026-01-12 14:28:39] Client[1] Received: HISTORY G thanh 0 0
+[2026-01-12 14:28:39] Client[1] Sent: SUCCESS 200 43
+[2026-01-12 14:28:41] Client[1] Received: TEXT G thanh hello
+[2026-01-12 14:28:41] Client[1] Sent TEXT to group thanh: hello
+[2026-01-12 14:28:41] Client[1] Sent: SUCCESS 201 SENT
+[2026-01-12 14:28:54] Accepted connection: Client[2] 100.78.191.22:63018
+[2026-01-12 14:28:54] Client[2] connected: 100.78.191.22:63018
+[2026-01-12 14:28:54] Client[2] Received: LOGIN test2 1
+[2026-01-12 14:28:54] Client[2] Removed old session for user test2 (1768201716-41)
+[2026-01-12 14:28:54] Client[2] Sent: SUCCESS 200 SESSION 1768202934-41
+[2026-01-12 14:28:54] Client[2] Received: AUTH 1768202934-41
+[2026-01-12 14:28:54] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:28:55] Client[2] Received: GET_FRIENDS
+[2026-01-12 14:28:55] Client[2] Sent: SUCCESS 200 FRIENDS test1:online test6:offline vinhle:offline
+[2026-01-12 14:28:55] Client[2] Received: GET_GROUPS
+[2026-01-12 14:28:55] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:28:56] Client[2] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:28:56] Client[2] Sent 0 pending requests to test2
+[2026-01-12 14:28:56] Client[2] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 14:28:56] Client[2] Received: GET_GROUP_INVITES
+[2026-01-12 14:28:56] Client[2] Sent 1 group invites to test2
+[2026-01-12 14:28:56] Client[2] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 14:28:58] Client[2] Received: GET_FRIENDS
+[2026-01-12 14:28:58] Client[2] Sent: SUCCESS 200 FRIENDS test1:online test6:offline vinhle:offline
+[2026-01-12 14:29:44] Client[2] Received: ADD_FRIEND phu
+[2026-01-12 14:29:44] NOTIFY to phu (offline): NOTIFY_FRIEND_REQUEST test2
+[2026-01-12 14:29:44] Client[2] Sent: SUCCESS 200 REQUEST_SENT phu
+[2026-01-12 14:30:02] Accepted connection: Client[3] 100.78.191.22:63036
+[2026-01-12 14:30:02] Client[3] connected: 100.78.191.22:63036
+[2026-01-12 14:30:02] Client[3] Received: LOGIN phu 1
+[2026-01-12 14:30:02] Client[3] Removed old session for user phu (1768198267-41)
+[2026-01-12 14:30:02] Client[3] Sent: SUCCESS 200 SESSION 1768203002-41
+[2026-01-12 14:30:02] Client[3] Received: AUTH 1768203002-41
+[2026-01-12 14:30:02] Client[3] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:30:03] Client[3] Received: GET_FRIENDS
+[2026-01-12 14:30:03] Client[3] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-12 14:30:03] Client[3] Received: GET_GROUPS
+[2026-01-12 14:30:03] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:30:03] Client[3] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:30:03] Client[3] Sent 1 pending requests to phu
+[2026-01-12 14:30:03] Client[3] Sent: SUCCESS 200 PENDING_REQUESTS test2
+[2026-01-12 14:30:03] Client[3] Received: GET_GROUP_INVITES
+[2026-01-12 14:30:03] Client[3] Sent 0 group invites to phu
+[2026-01-12 14:30:03] Client[3] Sent: SUCCESS 200 GROUP_INVITES 
+[2026-01-12 14:30:07] Client[3] disconnected.
+[2026-01-12 14:30:46] Client[2] disconnected.
+[2026-01-12 14:30:47] Client[1] disconnected.
+[2026-01-12 14:31:00] Accepted connection: Client[4] 100.78.191.22:63064
+[2026-01-12 14:31:00] Client[4] connected: 100.78.191.22:63064
+[2026-01-12 14:31:00] Client[4] Received: LOGIN test1 1
+[2026-01-12 14:31:00] Client[4] Removed old session for user test1 (1768202901-41)
+[2026-01-12 14:31:00] Client[4] Sent: SUCCESS 200 SESSION 1768203060-41
+[2026-01-12 14:31:00] Client[4] Received: AUTH 1768203060-41
+[2026-01-12 14:31:00] Client[4] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:31:01] Client[4] Received: GET_FRIENDS
+[2026-01-12 14:31:01] Client[4] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline
+[2026-01-12 14:31:01] Client[4] Received: GET_GROUPS
+[2026-01-12 14:31:01] Client[4] Sent: SUCCESS 200 GROUPS thanh:1
+[2026-01-12 14:31:01] Client[4] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:31:01] Client[4] Sent 0 pending requests to test1
+[2026-01-12 14:31:01] Client[4] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 14:31:01] Client[4] Received: GET_GROUP_INVITES
+[2026-01-12 14:31:01] Client[4] Sent 1 group invites to test1
+[2026-01-12 14:31:01] Client[4] Sent: SUCCESS 200 GROUP_INVITES new-chat:phu1
+[2026-01-12 14:31:23] Client[4] Received: CONFIRM_JOIN new-chat (invited by phu1)
+[2026-01-12 14:31:23] Client[4] test1 joined group new-chat
+[2026-01-12 14:31:23] NOTIFY to phu1 (offline): NOTIFY_MEMBER_JOIN new-chat test1
+
+[2026-01-12 14:31:23] Client[4] Sent: SUCCESS 201 JOINED new-chat
+[2026-01-12 14:31:23] Client[4] Received: GET_GROUPS
+[2026-01-12 14:31:23] Client[4] Sent: SUCCESS 200 GROUPS thanh:1 new-chat:2
+[2026-01-12 14:31:41] Client[4] Received: SEND_INVITE thanh phu1
+[2026-01-12 14:31:41] NOTIFY to phu1 (offline): NOTIFY_GROUP_INVITE thanh test1
+
+[2026-01-12 14:31:41] Client[4] Invited phu1 to group thanh
+[2026-01-12 14:31:41] Client[4] Sent: SUCCESS 200 INVITE_SENT phu1
+[2026-01-12 14:34:21] Accepted connection: Client[5] 100.121.178.13:62897
+[2026-01-12 14:34:21] Client[5] connected: 100.121.178.13:62897
+[2026-01-12 14:34:21] Client[5] Received: LOGIN phu1 1
+[2026-01-12 14:34:21] Client[5] Removed old session for user phu1 (1768199881-41)
+[2026-01-12 14:34:21] Client[5] Sent: SUCCESS 200 SESSION 1768203261-41
+[2026-01-12 14:34:21] Client[5] Received: AUTH 1768203261-41
+[2026-01-12 14:34:21] Client[5] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:34:22] Client[5] Received: GET_FRIENDS
+[2026-01-12 14:34:22] Client[5] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-12 14:34:22] Client[5] Received: GET_GROUPS
+[2026-01-12 14:34:22] Client[5] Sent: SUCCESS 200 GROUPS new-chat:2 phu:1
+[2026-01-12 14:34:44] Client[5] Received: HISTORY U test1 0 0
+[2026-01-12 14:34:44] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 14:34:46] Client[5] Received: HISTORY U test1 0 0
+[2026-01-12 14:34:46] Client[5] Sent: SUCCESS 200 5
+[2026-01-12 14:36:00] Accepted connection: Client[6] 100.78.191.22:63285
+[2026-01-12 14:36:00] Client[6] connected: 100.78.191.22:63285
+[2026-01-12 14:36:00] Client[6] Received: LOGIN phu1 1
+[2026-01-12 14:36:00] Client[6] Removed old session for user phu1 (1768203261-41)
+[2026-01-12 14:36:00] Client[5] disconnected.
+[2026-01-12 14:36:00] Client[6] Sent: SUCCESS 200 SESSION 1768203360-41
+[2026-01-12 14:36:00] Client[6] Received: AUTH 1768203360-41
+[2026-01-12 14:36:00] Client[6] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:36:01] Client[6] Received: GET_FRIENDS
+[2026-01-12 14:36:01] Client[6] Sent: SUCCESS 200 FRIENDS test1:online
+[2026-01-12 14:36:01] Client[6] Received: GET_GROUPS
+[2026-01-12 14:36:01] Client[6] Sent: SUCCESS 200 GROUPS new-chat:2 phu:1
+[2026-01-12 14:36:01] Client[6] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:36:01] Client[6] Sent 0 pending requests to phu1
+[2026-01-12 14:36:01] Client[6] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 14:36:01] Client[6] Received: GET_GROUP_INVITES
+[2026-01-12 14:36:01] Client[6] Sent 1 group invites to phu1
+[2026-01-12 14:36:01] Client[6] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 14:36:41] Client[6] Received: HISTORY U test1 0 0
+[2026-01-12 14:36:41] Client[6] Sent: SUCCESS 200 5
+[2026-01-12 14:37:06] Client[4] Received: SEND_INVITE thanh test6
+[2026-01-12 14:37:06] NOTIFY to test6 (offline): NOTIFY_GROUP_INVITE thanh test1
+
+[2026-01-12 14:37:06] Client[4] Invited test6 to group thanh
+[2026-01-12 14:37:06] Client[4] Sent: SUCCESS 200 INVITE_SENT test6
+[2026-01-12 14:37:23] Accepted connection: Client[7] 100.78.191.22:63302
+[2026-01-12 14:37:23] Client[7] connected: 100.78.191.22:63302
+[2026-01-12 14:37:23] Client[7] Received: LOGIN test6 1
+[2026-01-12 14:37:23] Client[7] Removed old session for user test6 (1768202161-41)
+[2026-01-12 14:37:23] Client[7] Sent: SUCCESS 200 SESSION 1768203443-41
+[2026-01-12 14:37:23] Client[7] Received: AUTH 1768203443-41
+[2026-01-12 14:37:23] Client[7] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:37:24] Client[7] Received: GET_FRIENDS
+[2026-01-12 14:37:24] Client[7] Sent: SUCCESS 200 FRIENDS test2:offline test1:online
+[2026-01-12 14:37:24] Client[7] Received: GET_GROUPS
+[2026-01-12 14:37:24] Client[7] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 14:37:25] Client[7] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:37:25] Client[7] Sent 0 pending requests to test6
+[2026-01-12 14:37:25] Client[7] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 14:37:25] Client[7] Received: GET_GROUP_INVITES
+[2026-01-12 14:37:25] Client[7] Sent 1 group invites to test6
+[2026-01-12 14:37:25] Client[7] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 14:37:33] Client[6] disconnected.
+[2026-01-12 14:37:44] Client[7] Received: ADD_FRIEND phu1
+[2026-01-12 14:37:44] NOTIFY to phu1 (offline): NOTIFY_FRIEND_REQUEST test6
+[2026-01-12 14:37:44] Client[7] Sent: SUCCESS 200 REQUEST_SENT phu1
+[2026-01-12 14:37:46] Client[4] disconnected.
+[2026-01-12 14:38:01] Accepted connection: Client[8] 100.78.191.22:63304
+[2026-01-12 14:38:01] Client[8] connected: 100.78.191.22:63304
+[2026-01-12 14:38:01] Client[8] Received: LOGIN phu1 1
+[2026-01-12 14:38:01] Client[8] Removed old session for user phu1 (1768203360-41)
+[2026-01-12 14:38:01] Client[8] Sent: SUCCESS 200 SESSION 1768203481-41
+[2026-01-12 14:38:01] Client[8] Received: AUTH 1768203481-41
+[2026-01-12 14:38:01] Client[8] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:38:02] Client[8] Received: GET_FRIENDS
+[2026-01-12 14:38:02] Client[8] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 14:38:02] Client[8] Received: GET_GROUPS
+[2026-01-12 14:38:02] Client[8] Sent: SUCCESS 200 GROUPS new-chat:2 phu:1
+[2026-01-12 14:38:03] Client[8] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:38:03] Client[8] Sent 1 pending requests to phu1
+[2026-01-12 14:38:03] Client[8] Sent: SUCCESS 200 PENDING_REQUESTS test6
+[2026-01-12 14:38:03] Client[8] Received: GET_GROUP_INVITES
+[2026-01-12 14:38:03] Client[8] Sent 1 group invites to phu1
+[2026-01-12 14:38:03] Client[8] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 14:58:58] Accepted connection: Client[9] 100.121.178.13:53481
+[2026-01-12 14:58:58] Client[9] connected: 100.121.178.13:53481
+[2026-01-12 14:58:58] Client[9] Received: LOGIN phu1 1
+[2026-01-12 14:58:58] Client[9] Removed old session for user phu1 (1768203481-41)
+[2026-01-12 14:58:58] Client[8] disconnected.
+[2026-01-12 14:58:58] Client[9] Sent: SUCCESS 200 SESSION 1768204738-41
+[2026-01-12 14:58:58] Client[9] Received: AUTH 1768204738-41
+[2026-01-12 14:58:58] Client[9] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 14:58:59] Client[9] Received: GET_FRIENDS
+[2026-01-12 14:58:59] Client[9] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 14:58:59] Client[9] Received: GET_GROUPS
+[2026-01-12 14:58:59] Client[9] Sent: SUCCESS 200 GROUPS new-chat:2 phu:1
+[2026-01-12 14:58:59] Client[9] Received: GET_PENDING_REQUESTS
+[2026-01-12 14:58:59] Client[9] Sent 1 pending requests to phu1
+[2026-01-12 14:58:59] Client[9] Sent: SUCCESS 200 PENDING_REQUESTS test6
+[2026-01-12 14:58:59] Client[9] Received: GET_GROUP_INVITES
+[2026-01-12 14:58:59] Client[9] Sent 1 group invites to phu1
+[2026-01-12 14:58:59] Client[9] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 15:00:02] Client[9] Received: HISTORY U test1 0 0
+[2026-01-12 15:00:02] Client[9] Sent: SUCCESS 200 5
+[2026-01-12 15:00:06] Accepted connection: Client[10] 100.78.191.22:64341
+[2026-01-12 15:00:06] Client[10] connected: 100.78.191.22:64341
+[2026-01-12 15:00:06] Client[10] Received: LOGIN phu 1
+[2026-01-12 15:00:06] Client[10] Removed old session for user phu (1768203002-41)
+[2026-01-12 15:00:06] Client[10] Sent: SUCCESS 200 SESSION 1768204806-41
+[2026-01-12 15:00:06] Client[10] Received: AUTH 1768204806-41
+[2026-01-12 15:00:06] Client[10] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:00:07] Client[10] Received: GET_FRIENDS
+[2026-01-12 15:00:07] Client[10] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 15:00:07] Client[10] Received: GET_GROUPS
+[2026-01-12 15:00:07] Client[10] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 15:00:07] Client[10] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:00:07] Client[10] Sent 1 pending requests to phu
+[2026-01-12 15:00:07] Client[10] Sent: SUCCESS 200 PENDING_REQUESTS test2
+[2026-01-12 15:00:07] Client[10] Received: GET_GROUP_INVITES
+[2026-01-12 15:00:07] Client[10] Sent 0 group invites to phu
+[2026-01-12 15:00:07] Client[10] Sent: SUCCESS 200 GROUP_INVITES 
+Server shutting down
+[2026-01-12 15:01:39] Server started on port 8888.
+[2026-01-12 15:02:41] Accepted connection: Client[1] 100.78.191.22:64365
+[2026-01-12 15:02:41] Client[1] connected: 100.78.191.22:64365
+[2026-01-12 15:02:41] Client[1] Received: LOGIN phu 1
+[2026-01-12 15:02:41] Client[1] Removed old session for user phu (1768204806-41)
+[2026-01-12 15:02:41] Client[1] Sent: SUCCESS 200 SESSION 1768204961-41
+[2026-01-12 15:02:41] Client[1] Received: AUTH 1768204961-41
+[2026-01-12 15:02:41] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:02:42] Client[1] Received: GET_FRIENDS
+[2026-01-12 15:02:42] Client[1] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 15:02:42] Client[1] Received: GET_GROUPS
+[2026-01-12 15:02:42] Client[1] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 15:02:43] Client[1] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:02:43] Client[1] Sent 1 pending requests to phu
+[2026-01-12 15:02:43] Client[1] Sent: SUCCESS 200 PENDING_REQUESTS test2
+[2026-01-12 15:02:43] Client[1] Received: GET_GROUP_INVITES
+[2026-01-12 15:02:43] Client[1] Sent 0 group invites to phu
+[2026-01-12 15:02:43] Client[1] Sent: SUCCESS 200 GROUP_INVITES 
+[2026-01-12 15:03:43] Client[1] Received: HISTORY U test1 0 0
+[2026-01-12 15:03:43] Client[1] Sent: SUCCESS 200 2
+[2026-01-12 15:04:13] Client[1] Received: ADD_FRIEND phu1
+[2026-01-12 15:04:13] NOTIFY to phu1 (offline): NOTIFY_FRIEND_REQUEST phu
+[2026-01-12 15:04:13] Client[1] Sent: SUCCESS 200 REQUEST_SENT phu1
+[2026-01-12 15:04:18] Accepted connection: Client[2] 100.121.178.13:53017
+[2026-01-12 15:04:18] Client[2] connected: 100.121.178.13:53017
+[2026-01-12 15:04:18] Client[2] Received: LOGIN phu1 1
+[2026-01-12 15:04:18] Client[2] Removed old session for user phu1 (1768204738-41)
+[2026-01-12 15:04:18] Client[2] Sent: SUCCESS 200 SESSION 1768205058-41
+[2026-01-12 15:04:18] Client[2] Received: AUTH 1768205058-41
+[2026-01-12 15:04:18] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:04:19] Client[2] Received: GET_FRIENDS
+[2026-01-12 15:04:19] Client[2] Sent: SUCCESS 200 FRIENDS test1:offline
+[2026-01-12 15:04:19] Client[2] Received: GET_GROUPS
+[2026-01-12 15:04:19] Client[2] Sent: SUCCESS 200 GROUPS phu:1 new-chat:2
+[2026-01-12 15:04:19] Client[2] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:04:19] Client[2] Sent 2 pending requests to phu1
+[2026-01-12 15:04:19] Client[2] Sent: SUCCESS 200 PENDING_REQUESTS test6 phu
+[2026-01-12 15:04:19] Client[2] Received: GET_GROUP_INVITES
+[2026-01-12 15:04:19] Client[2] Sent 1 group invites to phu1
+[2026-01-12 15:04:19] Client[2] Sent: SUCCESS 200 GROUP_INVITES thanh:test1
+[2026-01-12 15:04:30] Client[2] Received: CONFIRM_FRIEND phu
+[2026-01-12 15:04:30] NOTIFY to phu: NOTIFY_FRIEND_ACCEPTED phu1
+[2026-01-12 15:04:30] Client[2] Sent: SUCCESS 201 FRIEND_ADDED phu
+[2026-01-12 15:04:30] Client[1] Received: GET_FRIENDS
+[2026-01-12 15:04:30] Client[1] Sent: SUCCESS 200 FRIENDS test1:offline phu1:online
+[2026-01-12 15:04:30] Client[2] Received: GET_FRIENDS
+[2026-01-12 15:04:30] Client[2] Sent: SUCCESS 200 FRIENDS test1:offline phu:online
+[2026-01-12 15:04:30] Client[2] Received: GET_FRIENDS
+[2026-01-12 15:04:30] Client[2] Sent: SUCCESS 200 FRIENDS test1:offline phu:online
+[2026-01-12 15:04:32] Client[2] Received: HISTORY U phu 0 0
+[2026-01-12 15:04:32] Client[2] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:04:38] Client[2] disconnected.
+[2026-01-12 15:04:51] Client[1] Received: INIT_GROUP new 10
+[2026-01-12 15:04:51] Client[1] Created group: new (max: 10)
+[2026-01-12 15:04:51] Client[1] Sent: SUCCESS 201 GROUP_CREATED new
+[2026-01-12 15:04:52] Client[1] Received: GET_GROUPS
+[2026-01-12 15:04:52] Client[1] Sent: SUCCESS 200 GROUPS new:1
+[2026-01-12 15:04:54] Client[1] Received: GET_MEMBERS new
+[2026-01-12 15:04:54] Client[1] Sent: SUCCESS 200 MEMBERS phu:admin:online
+[2026-01-12 15:04:58] Client[1] Received: SEND_INVITE new phu1
+[2026-01-12 15:04:58] NOTIFY to phu1 (offline): NOTIFY_GROUP_INVITE new phu
+
+[2026-01-12 15:04:58] Client[1] Invited phu1 to group new
+[2026-01-12 15:04:58] Client[1] Sent: SUCCESS 200 INVITE_SENT phu1
+[2026-01-12 15:05:06] Accepted connection: Client[3] 100.121.178.13:54199
+[2026-01-12 15:05:06] Client[3] connected: 100.121.178.13:54199
+[2026-01-12 15:05:06] Client[3] Received: LOGIN phu1 1
+[2026-01-12 15:05:06] Client[3] Removed old session for user phu1 (1768205058-41)
+[2026-01-12 15:05:06] Client[3] Sent: SUCCESS 200 SESSION 1768205106-41
+[2026-01-12 15:05:06] Client[3] Received: AUTH 1768205106-41
+[2026-01-12 15:05:06] Client[3] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:05:07] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:05:07] Client[3] Sent: SUCCESS 200 FRIENDS test1:offline phu:online
+[2026-01-12 15:05:07] Client[3] Received: GET_GROUPS
+[2026-01-12 15:05:07] Client[3] Sent: SUCCESS 200 GROUPS phu:1 new-chat:2
+[2026-01-12 15:05:07] Client[3] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:05:07] Client[3] Sent 1 pending requests to phu1
+[2026-01-12 15:05:07] Client[3] Sent: SUCCESS 200 PENDING_REQUESTS test6
+[2026-01-12 15:05:07] Client[3] Received: GET_GROUP_INVITES
+[2026-01-12 15:05:07] Client[3] Sent 2 group invites to phu1
+[2026-01-12 15:05:07] Client[3] Sent: SUCCESS 200 GROUP_INVITES new:phu thanh:test1
+[2026-01-12 15:05:13] Client[3] Received: CONFIRM_JOIN new (invited by phu)
+[2026-01-12 15:05:13] Client[3] phu1 joined group new
+[2026-01-12 15:05:13] NOTIFY to phu: NOTIFY_MEMBER_JOIN new phu1
+
+[2026-01-12 15:05:13] Client[3] Sent: SUCCESS 201 JOINED new
+[2026-01-12 15:05:14] Client[3] Received: GET_GROUPS
+[2026-01-12 15:05:14] Client[3] Sent: SUCCESS 200 GROUPS phu:1 new-chat:2 new:2
+[2026-01-12 15:05:15] Client[1] Received: GET_GROUPS
+[2026-01-12 15:05:15] Client[1] Sent: SUCCESS 200 GROUPS new:2
+[2026-01-12 15:05:17] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:05:17] Client[3] Sent: SUCCESS 200 FRIENDS test1:offline phu:online
+[2026-01-12 15:05:18] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:05:18] Client[3] Sent: SUCCESS 200 FRIENDS test1:offline phu:online
+[2026-01-12 15:05:19] Client[3] Received: HISTORY U phu 0 0
+[2026-01-12 15:05:19] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:05:20] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 15:05:20] Client[3] Sent: SUCCESS 200 5
+[2026-01-12 15:05:27] Client[3] Received: HISTORY G new 0 0
+[2026-01-12 15:05:27] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:05:34] Client[1] Received: LOGOUT
+[2026-01-12 15:05:34] Client[1] User phu logged out (session 1768204961-41)
+[2026-01-12 15:05:34] Client[1] Sent: SUCCESS 200 LOGOUT
+[2026-01-12 15:05:35] Client[1] disconnected.
+[2026-01-12 15:06:13] Client[3] Received: LOGOUT
+[2026-01-12 15:06:13] Client[3] User phu1 logged out (session 1768205106-41)
+[2026-01-12 15:06:13] Client[3] Sent: SUCCESS 200 LOGOUT
+[2026-01-12 15:06:14] Client[3] disconnected.
+Server shutting down
+[2026-01-12 15:06:40] Server started on port 8888.
+[2026-01-12 15:08:08] Accepted connection: Client[1] 100.121.178.13:55536
+[2026-01-12 15:08:08] Client[1] connected: 100.121.178.13:55536
+[2026-01-12 15:08:08] Client[1] Received: REGISTER khai 1
+[2026-01-12 15:08:08] Client[1] Sent: SUCCESS 201 REGISTERED khai
+[2026-01-12 15:08:11] Client[1] Received: LOGIN khai 1
+[2026-01-12 15:08:11] Client[1] Sent: SUCCESS 200 SESSION 1768205291-41
+[2026-01-12 15:08:16] Client[1] Received: AUTH 1768205291-41
+[2026-01-12 15:08:16] Client[1] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:08:17] Client[1] Received: GET_FRIENDS
+GET_GROUPS
+[2026-01-12 15:08:17] Client[1] Sent: SUCCESS 200 FRIENDS 
+[2026-01-12 15:08:17] Client[1] Received: GET_PENDING_REQUESTS
+GET_GROUP_INVITES
+[2026-01-12 15:08:17] Client[1] Sent 0 pending requests to khai
+[2026-01-12 15:08:17] Client[1] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 15:08:34] Client[1] Received: LOGOUT
+[2026-01-12 15:08:34] Client[1] User khai logged out (session 1768205291-41)
+[2026-01-12 15:08:34] Client[1] Sent: SUCCESS 200 LOGOUT
+[2026-01-12 15:08:34] Client[1] disconnected.
+[2026-01-12 15:08:50] Accepted connection: Client[2] 100.78.191.22:64532
+[2026-01-12 15:08:50] Client[2] connected: 100.78.191.22:64532
+[2026-01-12 15:08:50] Client[2] Received: REGISTER long 1
+[2026-01-12 15:08:50] Client[2] Sent: SUCCESS 201 REGISTERED long
+[2026-01-12 15:08:50] Client[2] Received: LOGIN long 1
+[2026-01-12 15:08:50] Client[2] Sent: SUCCESS 200 SESSION 1768205330-41
+[2026-01-12 15:08:50] Client[2] Received: AUTH 1768205330-41
+[2026-01-12 15:08:50] Client[2] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:08:51] Client[2] Received: GET_FRIENDS
+[2026-01-12 15:08:51] Client[2] Sent: SUCCESS 200 FRIENDS 
+[2026-01-12 15:08:51] Client[2] Received: GET_GROUPS
+[2026-01-12 15:08:51] Client[2] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 15:08:51] Client[2] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:08:51] Client[2] Sent 0 pending requests to long
+[2026-01-12 15:08:51] Client[2] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 15:08:51] Client[2] Received: GET_GROUP_INVITES
+[2026-01-12 15:08:51] Client[2] Sent 0 group invites to long
+[2026-01-12 15:08:51] Client[2] Sent: SUCCESS 200 GROUP_INVITES 
+[2026-01-12 15:08:55] Accepted connection: Client[3] 100.121.178.13:56320
+[2026-01-12 15:08:55] Client[3] connected: 100.121.178.13:56320
+[2026-01-12 15:08:55] Client[3] Received: LOGIN khai 1
+[2026-01-12 15:08:55] Client[3] Sent: SUCCESS 200 SESSION 1768205335-41
+[2026-01-12 15:08:55] Client[3] Received: AUTH 1768205335-41
+[2026-01-12 15:08:55] Client[3] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:08:56] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:08:56] Client[3] Sent: SUCCESS 200 FRIENDS 
+[2026-01-12 15:08:57] Client[3] Received: GET_GROUPS
+[2026-01-12 15:08:57] Client[3] Sent: SUCCESS 200 GROUPS 
+[2026-01-12 15:08:57] Client[3] Received: GET_PENDING_REQUESTS
+GET_GROUP_INVITES
+[2026-01-12 15:08:57] Client[3] Sent 0 pending requests to khai
+[2026-01-12 15:08:57] Client[3] Sent: SUCCESS 200 PENDING_REQUESTS 
+[2026-01-12 15:09:12] Client[2] Received: ADD_FRIEND khai
+[2026-01-12 15:09:12] NOTIFY to khai: NOTIFY_FRIEND_REQUEST long
+[2026-01-12 15:09:12] Client[2] Sent: SUCCESS 200 REQUEST_SENT khai
+[2026-01-12 15:09:20] Client[3] Received: CONFIRM_FRIEND long
+[2026-01-12 15:09:20] NOTIFY to long: NOTIFY_FRIEND_ACCEPTED khai
+[2026-01-12 15:09:20] Client[3] Sent: SUCCESS 201 FRIEND_ADDED long
+[2026-01-12 15:09:20] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:09:20] Client[3] Sent: SUCCESS 200 FRIENDS long:online
+[2026-01-12 15:09:20] Client[2] Received: GET_FRIENDS
+[2026-01-12 15:09:20] Client[2] Sent: SUCCESS 200 FRIENDS khai:online
+[2026-01-12 15:09:20] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:09:20] Client[3] Sent: SUCCESS 200 FRIENDS long:online
+[2026-01-12 15:09:24] Client[2] Received: HISTORY U khai 0 0
+[2026-01-12 15:09:24] Client[2] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:26] Client[2] Received: HISTORY U khai 0 0
+[2026-01-12 15:09:26] Client[2] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:28] Client[3] Received: HISTORY U long 0 0
+[2026-01-12 15:09:28] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:29] Client[3] Received: HISTORY U long 0 0
+[2026-01-12 15:09:29] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:32] Client[3] Received: HISTORY U long 0 0
+[2026-01-12 15:09:32] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:34] Client[3] Received: HISTORY U long 0 0
+[2026-01-12 15:09:34] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:09:34] Client[2] Received: TEXT U khai Xin chao
+[2026-01-12 15:09:34] NOTIFY to khai: NOTIFY_TEXT U long 1768205374 Xin chao
+[2026-01-12 15:09:34] Client[2] Sent TEXT to khai: Xin chao
+[2026-01-12 15:09:34] Client[2] Sent: SUCCESS 201 SENT
+[2026-01-12 15:09:47] Client[3] Received: TEXT U long chao bạn nhé
+[2026-01-12 15:09:47] NOTIFY to long: NOTIFY_TEXT U khai 1768205387 chao bạn nhé
+[2026-01-12 15:09:47] Client[3] Sent TEXT to long: chao bạn nhé
+[2026-01-12 15:09:47] Client[3] Sent: SUCCESS 201 SENT
+[2026-01-12 15:10:47] Client[2] Received: INIT_GROUP khailong 10
+[2026-01-12 15:10:47] Client[2] Created group: khailong (max: 10)
+[2026-01-12 15:10:47] Client[2] Sent: SUCCESS 201 GROUP_CREATED khailong
+[2026-01-12 15:10:47] Client[2] Received: GET_GROUPS
+[2026-01-12 15:10:47] Client[2] Sent: SUCCESS 200 GROUPS khailong:1
+[2026-01-12 15:10:52] Client[2] Received: GET_MEMBERS khailong
+[2026-01-12 15:10:52] Client[2] Sent: SUCCESS 200 MEMBERS long:admin:online
+[2026-01-12 15:11:04] Client[2] Received: SEND_INVITE khailong khai
+[2026-01-12 15:11:04] NOTIFY to khai: NOTIFY_GROUP_INVITE khailong long
+
+[2026-01-12 15:11:04] Client[2] Invited khai to group khailong
+[2026-01-12 15:11:04] Client[2] Sent: SUCCESS 200 INVITE_SENT khai
+[2026-01-12 15:11:12] Client[3] Received: CONFIRM_JOIN khailong
+[2026-01-12 15:11:12] Client[3] khai joined group khailong
+[2026-01-12 15:11:12] NOTIFY to long: NOTIFY_MEMBER_JOIN khailong khai
+
+[2026-01-12 15:11:12] Client[3] Sent: SUCCESS 201 JOINED khailong
+[2026-01-12 15:11:13] Client[3] Received: GET_GROUPS
+[2026-01-12 15:11:13] Client[3] Sent: SUCCESS 200 GROUPS khailong:2
+[2026-01-12 15:11:20] Client[3] Received: HISTORY G khailong 0 0
+[2026-01-12 15:11:20] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:11:25] Client[2] Received: HISTORY G khailong 0 0
+[2026-01-12 15:11:25] Client[2] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:11:29] Client[2] Received: TEXT G khailong ChOF ]
+[2026-01-12 15:11:29] NOTIFY to khai: NOTIFY_TEXT G khailong long 1768205489 ChOF ]
+[2026-01-12 15:11:29] Client[2] Sent TEXT to group khailong: ChOF ]
+[2026-01-12 15:11:29] Client[2] Sent: SUCCESS 201 SENT
+[2026-01-12 15:11:35] Client[3] Received: TEXT G khailong Faler
+[2026-01-12 15:11:35] NOTIFY to long: NOTIFY_TEXT G khailong khai 1768205495 Faler
+[2026-01-12 15:11:35] Client[3] Sent TEXT to group khailong: Faler
+[2026-01-12 15:11:35] Client[3] Sent: SUCCESS 201 SENT
+[2026-01-12 15:11:48] Client[3] Received: REQ_UPLOAD G khailong Screenshot 2024-04-09 201556.png 125666
+[2026-01-12 15:11:48] Client[3] Upload request: Screenshot 2024-04-09 201556.png -> 1768205508_1
+[2026-01-12 15:11:48] Client[3] Sent: SUCCESS 200 READY_UPLOAD 1768205508_1
+[2026-01-12 15:11:48] Client[3] Received: UPLOAD_DATA 1768205508_1
+[2026-01-12 15:11:48] Client[3] Start receiving binary chunks for 1768205508_1
+[2026-01-12 15:11:49] Client[3] Receiving UPLOAD chunk 1/2 for 1768205508_1 (65536 bytes, offset=0)
+[2026-01-12 15:11:49] Client[3] Receiving UPLOAD chunk 2/2 for 1768205508_1 (60130 bytes, offset=65536)
+[2026-01-12 15:11:49] Client[3] Upload complete: 1768205508_1
+[2026-01-12 15:11:49] NOTIFY to long: NOTIFY_FILE G khailong khai 1768205508_1 Screenshot 2024-04-09 201556.png
+[2026-01-12 15:11:58] Client[3] Received: HISTORY U long 0 0
+[2026-01-12 15:11:58] Client[3] Sent: SUCCESS 200 2
+[2026-01-12 15:12:04] Client[3] Received: HISTORY G khailong 0 0
+[2026-01-12 15:12:04] Client[3] Sent: SUCCESS 200 3
+[2026-01-12 15:12:45] Client[2] disconnected.
+[2026-01-12 15:13:07] Client[3] Received: ADD_FRIEND test1
+[2026-01-12 15:13:07] NOTIFY to test1 (offline): NOTIFY_FRIEND_REQUEST khai
+[2026-01-12 15:13:07] Client[3] Sent: SUCCESS 200 REQUEST_SENT test1
+[2026-01-12 15:13:18] Accepted connection: Client[4] 100.78.191.22:64559
+[2026-01-12 15:13:18] Client[4] connected: 100.78.191.22:64559
+[2026-01-12 15:13:18] Client[4] Received: LOGIN test1 1
+[2026-01-12 15:13:18] Client[4] Removed old session for user test1 (1768203060-41)
+[2026-01-12 15:13:18] Client[4] Sent: SUCCESS 200 SESSION 1768205598-41
+[2026-01-12 15:13:18] Client[4] Received: AUTH 1768205598-41
+[2026-01-12 15:13:18] Client[4] Sent: SUCCESS 200 AUTH_OK
+[2026-01-12 15:13:19] Client[4] Received: GET_FRIENDS
+[2026-01-12 15:13:19] Client[4] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline
+[2026-01-12 15:13:19] Client[4] Received: GET_GROUPS
+[2026-01-12 15:13:19] Client[4] Sent: SUCCESS 200 GROUPS new-chat:2 thanh:1
+[2026-01-12 15:13:19] Client[4] Received: GET_PENDING_REQUESTS
+[2026-01-12 15:13:19] Client[4] Sent 1 pending requests to test1
+[2026-01-12 15:13:19] Client[4] Sent: SUCCESS 200 PENDING_REQUESTS khai
+[2026-01-12 15:13:19] Client[4] Received: GET_GROUP_INVITES
+[2026-01-12 15:13:19] Client[4] Sent 0 group invites to test1
+[2026-01-12 15:13:19] Client[4] Sent: SUCCESS 200 GROUP_INVITES 
+[2026-01-12 15:13:28] Client[4] Received: CONFIRM_FRIEND khai
+[2026-01-12 15:13:28] NOTIFY to khai: NOTIFY_FRIEND_ACCEPTED test1
+[2026-01-12 15:13:28] Client[4] Sent: SUCCESS 201 FRIEND_ADDED khai
+[2026-01-12 15:13:29] Client[4] Received: GET_FRIENDS
+[2026-01-12 15:13:29] Client[4] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline khai:online
+[2026-01-12 15:13:29] Client[4] Received: GET_FRIENDS
+[2026-01-12 15:13:29] Client[4] Sent: SUCCESS 200 FRIENDS test2:offline test6:offline test8:offline test11:offline test12:offline test13:offline vinhle:offline phu:offline phu1:offline khai:online
+[2026-01-12 15:13:29] Client[3] Received: GET_FRIENDS
+[2026-01-12 15:13:29] Client[3] Sent: SUCCESS 200 FRIENDS long:offline test1:online
+[2026-01-12 15:13:30] Client[4] Received: HISTORY U khai 0 0
+[2026-01-12 15:13:30] Client[4] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:13:34] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 15:13:34] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:13:36] Client[3] Received: HISTORY U test1 0 0
+[2026-01-12 15:13:36] Client[3] Sent: FAIL 404 NO_MESSAGES
+[2026-01-12 15:13:38] Client[3] Received: TEXT U test1 kjk
+[2026-01-12 15:13:38] NOTIFY to test1: NOTIFY_TEXT U khai 1768205618 kjk
+[2026-01-12 15:13:38] Client[3] Sent TEXT to test1: kjk
+[2026-01-12 15:13:38] Client[3] Sent: SUCCESS 201 SENT
+[2026-01-12 15:13:39] Client[4] Received: TEXT U khai ok
+[2026-01-12 15:13:39] NOTIFY to khai: NOTIFY_TEXT U test1 1768205619 ok
+[2026-01-12 15:13:39] Client[4] Sent TEXT to khai: ok
+[2026-01-12 15:13:39] Client[4] Sent: SUCCESS 201 Sxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxENT

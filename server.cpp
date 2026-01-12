@@ -1118,6 +1118,8 @@ void handle_client(SOCKET client_socket, int client_id, const string &client_add
                             response = "FAIL 404 GROUP_NOT_FOUND\n";
                         } else if (git->second.creator != current_user) {
                             response = "FAIL 403 NO_PERMISSION\n";
+                        } else if (target == current_user) {
+                            response = "FAIL 400 CANNOT_EJECT_SELF\n";
                         } else {
                             auto &members = git->second.members;
                             auto pos = find(members.begin(), members.end(), target);
@@ -1137,6 +1139,62 @@ void handle_client(SOCKET client_socket, int client_id, const string &client_add
                                 // Notify remaining members
                                 for (const auto &mem : members) {
                                     notify_user(mem, string("NOTIFY_MEMBER_LEFT ") + group_name + " " + target + "\n");
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if (cmd == "LEAVE_GROUP") {
+                // Allow any member to leave a group
+                if (current_session.empty()) { response = "FAIL 401 UNAUTHORIZED\n"; }
+                else {
+                    string group_name;
+                    iss >> group_name;
+                    if (group_name.empty()) {
+                        response = "FAIL 400 INVALID_FORMAT\n";
+                    } else {
+                        lock_guard<mutex> lock(groups_mutex);
+                        auto git = groups_map.find(group_name);
+                        if (git == groups_map.end()) {
+                            response = "FAIL 404 GROUP_NOT_FOUND\n";
+                        } else {
+                            auto &members = git->second.members;
+                            auto pos = find(members.begin(), members.end(), current_user);
+                            if (pos == members.end()) {
+                                response = "FAIL 404 NOT_A_MEMBER\n";
+                            } else {
+                                // Remove current user from group
+                                members.erase(pos);
+                                // Remove from user_groups
+                                auto &ugroups = user_groups[current_user];
+                                auto upos = find(ugroups.begin(), ugroups.end(), group_name);
+                                if (upos != ugroups.end()) ugroups.erase(upos);
+                                
+                                // If creator leaves, delete the group or transfer ownership
+                                if (git->second.creator == current_user) {
+                                    if (members.empty()) {
+                                        // Delete group if no members left
+                                        groups_map.erase(git);
+                                        log_message(prefix + current_user + " left and deleted group " + group_name);
+                                        response = "SUCCESS 200 LEFT_AND_DELETED " + group_name + "\n";
+                                    } else {
+                                        // Transfer ownership to first remaining member
+                                        git->second.creator = members[0];
+                                        log_message(prefix + current_user + " left group " + group_name + ", ownership transferred to " + members[0]);
+                                        response = "SUCCESS 200 LEFT " + group_name + "\n";
+                                        // Notify new admin
+                                        notify_user(members[0], string("NOTIFY_NEW_ADMIN ") + group_name + "\n");
+                                    }
+                                } else {
+                                    log_message(prefix + current_user + " left group " + group_name);
+                                    response = "SUCCESS 200 LEFT " + group_name + "\n";
+                                }
+                                
+                                save_groups_unlocked();
+                                
+                                // Notify remaining members
+                                for (const auto &mem : members) {
+                                    notify_user(mem, string("NOTIFY_MEMBER_LEFT ") + group_name + " " + current_user + "\n");
                                 }
                             }
                         }
@@ -1458,6 +1516,45 @@ void handle_client(SOCKET client_socket, int client_id, const string &client_add
                         }
                         response = string("SUCCESS 200 FRIENDS ") + out + "\n";
                     }
+                }
+            } else if (cmd == "GET_PENDING_REQUESTS") {
+                // Get pending friend requests for current user
+                if (current_session.empty()) { response = "FAIL 401 UNAUTHORIZED\n"; }
+                else {
+                    lock_guard<mutex> pl(pending_mutex);
+                    auto it = pending_requests.find(current_user);
+                    string out = "";
+                    if (it != pending_requests.end()) {
+                        for (size_t i = 0; i < it->second.size(); ++i) {
+                            if (i > 0) out += " ";
+                            out += it->second[i];
+                        }
+                    }
+                    response = string("SUCCESS 200 PENDING_REQUESTS ") + out + "\n";
+                    log_message(prefix + "Sent " + to_string(it != pending_requests.end() ? it->second.size() : 0) + " pending requests to " + current_user);
+                }
+            } else if (cmd == "GET_GROUP_INVITES") {
+                // Get group invites for current user
+                if (current_session.empty()) { response = "FAIL 401 UNAUTHORIZED\n"; }
+                else {
+                    lock_guard<mutex> gl(groups_mutex);
+                    string out = "";
+                    int count = 0;
+                    for (const auto &p : group_invites) {
+                        const string &gname = p.first;
+                        const vector<string> &invitees = p.second;
+                        // Check if current user is invited to this group
+                        if (find(invitees.begin(), invitees.end(), current_user) != invitees.end()) {
+                            if (count > 0) out += " ";
+                            // Format: group_name:inviter_name
+                            auto git = groups_map.find(gname);
+                            string inviter = (git != groups_map.end()) ? git->second.creator : "unknown";
+                            out += gname + ":" + inviter;
+                            count++;
+                        }
+                    }
+                    response = string("SUCCESS 200 GROUP_INVITES ") + out + "\n";
+                    log_message(prefix + "Sent " + to_string(count) + " group invites to " + current_user);
                 }
             } else if (cmd == "REQ_UPLOAD") {
                 // REQ_UPLOAD <Type> <Target> <Filename> <Filesize>

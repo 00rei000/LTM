@@ -1,0 +1,2 @@
+1767948746|test1|TEXT|chao helllo
+1768198328|phu|TEXT|hello
